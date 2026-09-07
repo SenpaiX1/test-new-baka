@@ -43,7 +43,7 @@ SET_OPTS_NEW = (
     '<div class="opts" id="setLib">\n'
     '                <div class="opt on" data-lib="gnmath">gnmath<br><span style="font-size:11px;color:var(--fg-3)">more known library</span></div>\n'
     '                <div class="opt" data-lib="lumin">Lumin<br><span style="font-size:11px;color:var(--fg-3)">bigger game libary</span></div>\n'
-    '                <div class="opt" data-lib="sussy">sussybakabois<br><span style="font-size:11px;color:var(--fg-3)">local library, works offline</span></div>\n'
+    '                <div class="opt" data-lib="sussy">sussybakabois<br><span style="font-size:11px;color:var(--fg-3)">bakaboiz worker library</span></div>\n'
     '            </div>'
 )
 

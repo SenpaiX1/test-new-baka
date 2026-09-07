@@ -1,282 +1,1752 @@
 [
   {
+    "id": "10mins",
+    "name": "10 Minutes Till Dawn",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/10mins.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/10mins.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "10bulls",
+    "name": "10 More Bullets",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/341e4f4578341df988656a6b04c55eb4_icon.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/10bulls.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "10-103",
+    "name": "10-103",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/0i3GPC.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/10-103.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "acidbun",
+    "name": "Acid Bunny",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/acidbune.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/acidbun.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "adventure-capitalist",
+    "name": "Adventure Capitalist",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/adventure-capitalist-revenue.jpg",
+    "url": "https://rawcdn.githack.com/selenite-cc/selenite-old/9c743188888af0986c8c7b293dbac8f9e421a4ee/adventure-capitalist/index.html",
+    "source": "external"
+  },
+  {
+    "id": "AdventureDrivers",
+    "name": "Adventure Drivers",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/adventure-drivers.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/AdventureDrivers.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "amazing",
+    "name": "Amazing Strange Rope Police",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/amazing-strange-rope-police-vice-spider_1x1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/amazing.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "sussys",
+    "name": "Among Us",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Among_Us.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/sussys.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "AngryBirdShowdown",
+    "name": "Angry Birds",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/angrybirdshowwwdown.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/AngryBirdShowdown.html",
+    "source": "gamesf"
+  },
+  {
     "id": "angry-birds-epic",
     "name": "Angry Birds Epic",
-    "cover": "sussybakabois/icons/angrybirddsepic.png",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/angrybirddsepic.png",
     "url": "https://bakawaka.ai1490.com/games/Epic/index.html",
     "source": "external"
   },
   {
+    "id": "backr",
+    "name": "Backrooms",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/iiZYgm.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/backr.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "badpiggies",
+    "name": "Bad Piggies",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/badpigyo.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/badpiggies.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clbadtimesim",
+    "name": "Badtime Simulator",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/badtimesiimm.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clbadtimesim.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "balatro",
+    "name": "Balatro",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/balatroicon.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/balatro.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "baldiboi",
+    "name": "Baldi Basic",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/baldibasiccc.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/baldiboi.html",
+    "source": "gamesf"
+  },
+  {
     "id": "clbaldiepstein",
     "name": "Baldi Jeffrey",
-    "cover": "sussybakabois/icons/jeffbaldi.png",
-    "url": "sussybakabois/gamesf/clbaldiepstein.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/jeffbaldi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clbaldiepstein.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clbaseballbros",
+    "name": "Base Ball Bros",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/baseball_bros.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clbaseballbros.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clgooglebaseball",
+    "name": "Baseball",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/googlebase.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clgooglebaseball.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "basketbros",
+    "name": "Basketball Bros",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/basketbros_1x1-cover.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/basketbros.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clbasketrandom",
+    "name": "Basketball Random",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/basketrandom.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clbasketrandom.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clbasketballstars",
+    "name": "Basketball Stars",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/basketballstarr.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clbasketballstars.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "basketsuper",
+    "name": "Basketball Superstars",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/basketball-superstars.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/basketsuper.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "beachbox",
+    "name": "Beach Boxing Simulator",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/beach-boxing-simulator.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/beachbox.html",
     "source": "gamesf"
   },
   {
     "id": "beeswarmm",
     "name": "Bee Swarm Sim",
-    "cover": "sussybakabois/icons/beesimmmm.png",
-    "url": "sussybakabois/gamesf/beeswarmm.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/beesimmmm.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/beeswarmm.html",
     "source": "gamesf"
+  },
+  {
+    "id": "big-tower-tiny-square",
+    "name": "Big Tower Tiny Square",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/BigTowerTinySquare_OG-logo.jpg.jpg",
+    "url": "https://script.google.com/macros/s/AKfycbw6jKTpI8KoOnlFGBHnzwkJfkIQOGoxL3gc97-GJSCKw_rUTNrEJhZmMN1wtwKfK9I5/exec",
+    "source": "external"
+  },
+  {
+    "id": "big-tower-tiny-square-2",
+    "name": "Big Tower Tiny Square 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/BigTowerTinySquare2_OG-logo.jpg.jpg",
+    "url": "https://script.google.com/macros/s/AKfycbwbbASHaO2ZYximV7hfnD1yDfuPgwYpeBAbLseJVa5DW8vhsXKCSNnK6XB79Z06seehjw/exec",
+    "source": "external"
+  },
+  {
+    "id": "clbindingofisaccsheeptime",
+    "name": "Binding Of Isacc",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/binding.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clbindingofisaccsheeptime.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "bitlife",
+    "name": "Bitlife",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Bitlife.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/bitlife.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clblackjackbattle",
+    "name": "Black Jack",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/thumb2x.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clblackjackbattle.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "blox-blast",
+    "name": "Blox Blast",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/blocky-blast-puzzle.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/bruhrt/991931632d3f605ea3cfe5c8f9e8f0f571ba5eb2/index.html",
+    "source": "external"
   },
   {
     "id": "clbobasimulator",
     "name": "Boba Simulator",
-    "cover": "sussybakabois/icons/bobasimmma.png",
-    "url": "sussybakabois/gamesf/clbobasimulator.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/bobasimmma.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clbobasimulator.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "bounce-master",
+    "name": "Bounce Master",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/bouncemasters.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/pengiun/b46d25d53239c51825f5eb41ba5bfe0fec695470/index.html",
+    "source": "external"
+  },
+  {
+    "id": "bowmasters",
+    "name": "Bowmasters",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/bowmasterrrs.jpg",
+    "url": "https://rawcdn.githack.com/SenpaiX1/bowmast/574cd8351fc4680878b9ab82ce72cccf73537d16/index.html",
+    "source": "external"
+  },
+  {
+    "id": "brawlstar",
+    "name": "Brawl Star",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/brawsta.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/brawlstar.html",
     "source": "gamesf"
   },
   {
     "id": "Brotato",
     "name": "Brotato",
-    "cover": "sussybakabois/icons/brotattoo.png",
-    "url": "sussybakabois/gamesf/Brotato.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/brotattoo.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Brotato.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "BuildNow.gg",
+    "name": "Buildnow.Gg",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/buildnow.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/BuildNow.gg.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clburritobisonlaunchalibre",
+    "name": "Burrito Bison",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/boiiiiiiii.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clburritobisonlaunchalibre.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "cash-flow",
+    "name": "Cash Flow",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/pjpg160x160.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/moneyboki/e5443b35c5dfa5a5819f56bde430767415ba49d8/index.html",
+    "source": "external"
+  },
+  {
+    "id": "Celeste",
+    "name": "Celeste",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/celesteeeajpg.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Celeste.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "viking",
+    "name": "Clash Of Vikings",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/cover-start.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/viking.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "climb-over",
+    "name": "Climb Over",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/e929820f9671485181cfc79eb335dadf.jpeg",
+    "url": "https://rawcdn.githack.com/SenpaiX1/ClimbOverIt.github.io/74edbf555d9e74b910e1f79790388d3bb6e29209/index.html",
+    "source": "external"
+  },
+  {
+    "id": "clusterushh",
+    "name": "Cluster Rush",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/cluster-rush.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clusterushh.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Cookie",
+    "name": "Cookie Clicker",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Cookie.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Cookie.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "crazy",
+    "name": "Crazy Cattle 3D",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Crazy_Cattle.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/crazy.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "crossy",
+    "name": "Crossyroad",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/crossybaka.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/crossy.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "csgobrocase",
+    "name": "Csgo Cases",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/gdsds.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/csgobrocase.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "cupheaad",
+    "name": "Cuphead",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/cuphe.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/cupheaad.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "deadly-descent",
+    "name": "Deadly Descent",
+    "cover": "",
+    "url": "https://rawcdn.githack.com/oklmu98/boisus/main/index.html",
+    "source": "external"
+  },
+  {
+    "id": "deltarun",
+    "name": "Deltarune",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/deltaru.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/deltarun.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "doodlejump",
+    "name": "Doodle Jump",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/DoodleJumpAppIcon.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/doodlejump.html",
     "source": "gamesf"
   },
   {
     "id": "cldouchebagworkou",
     "name": "Douchebag Workout",
-    "cover": "sussybakabois/icons/doucewoorkout1.png",
-    "url": "sussybakabois/gamesf/cldouchebagworkou.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/doucewoorkout1.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/cldouchebagworkou.html",
     "source": "gamesf"
   },
   {
     "id": "cldouchebagworkout2",
     "name": "Douchebag Workout 2",
-    "cover": "sussybakabois/icons/doucheciover2.png",
-    "url": "sussybakabois/gamesf/cldouchebagworkout2.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/doucheciover2.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/cldouchebagworkout2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "dh",
+    "name": "Drift Hunters",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/dri1234.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/dh.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "drivemad",
+    "name": "Drive Mad",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/drivebadmadhad.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/drivemad.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clducklife",
+    "name": "Duck Life 1",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/duck-life1.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clducklife.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clducklife2",
+    "name": "Duck Life 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/249603_1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clducklife2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clducklife3",
+    "name": "Duck Life 3",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ducklife-3.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clducklife3.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clducklife4",
+    "name": "Duck Life 4",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/w500.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clducklife4.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clducklfe5",
+    "name": "Duck Life 5",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ducklife55.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clducklfe5.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clducklifebattle",
+    "name": "Duck Life Battle",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/duckbattleboi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clducklifebattle.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clducklifespace",
+    "name": "Duck Life Space",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/duckspaceboi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clducklifespace.html",
     "source": "gamesf"
   },
   {
     "id": "dumway",
     "name": "Dumb Ways To Die",
-    "cover": "sussybakabois/icons/dummmmway.png",
-    "url": "sussybakabois/gamesf/dumway.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/dummmmway.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/dumway.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "dune",
+    "name": "Dune",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/2d05da937ca24dac885f62331267e847-512x512.jpeg",
+    "url": "https://rawcdn.githack.com/SenpaiX1/goondune/92ec6d64bbb16729cb4ee4a44caeb2d55add957c/index.html",
+    "source": "external"
+  },
+  {
+    "id": "earn-to-die",
+    "name": "Earn To Die",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/earnboi.png",
+    "url": "https://rawcdn.githack.com/oklmu98/bgfbgdf/main/index.html",
+    "source": "external"
+  },
+  {
+    "id": "esim",
+    "name": "Edys Car Simulator",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/512-2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/esim.html",
     "source": "gamesf"
   },
   {
     "id": "Endoparasitic",
     "name": "Endoparasitic",
-    "cover": "sussybakabois/icons/endoparasticv1.png",
-    "url": "sussybakabois/gamesf/Endoparasitic.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/endoparasticv1.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Endoparasitic.html",
     "source": "gamesf"
   },
   {
     "id": "Endoparasitic2",
     "name": "Endoparasitic 2",
-    "cover": "sussybakabois/icons/endooo2.png",
-    "url": "sussybakabois/gamesf/Endoparasitic2.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/endooo2.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Endoparasitic2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clescaperoad",
+    "name": "Escape Road",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/escape-road-game-sr1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clescaperoad.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clescaperoad-2",
+    "name": "Escape Road 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/escape-road-2-min-1.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clescaperoad-2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "escape",
+    "name": "Escaping Prison",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/41Xp0u7aZDL.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/escape.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "response",
+    "name": "Fear Response",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/fearre.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/response.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clfearstofathomhomealone",
+    "name": "Fears To Fathom",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/fear-1687284553768.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clfearstofathomhomealone.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clfireboyandwatergirl",
+    "name": "Fireboy&Watergirl",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/fireboiwatergir.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clfireboyandwatergirl.html",
     "source": "gamesf"
   },
   {
     "id": "fnafcandies",
     "name": "Five Nights At Candies",
-    "cover": "sussybakabois/icons/fnafffcadie.png",
-    "url": "sussybakabois/gamesf/fnafcandies.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/fnafffcadie.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/fnafcandies.html",
     "source": "gamesf"
   },
   {
     "id": "clfivenightsatepsteins",
     "name": "Five Nights At Epsteins",
-    "cover": "sussybakabois/icons/fnafepisteinnn.png",
-    "url": "sussybakabois/gamesf/clfivenightsatepsteins.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/fnafepisteinnn.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clfivenightsatepsteins.html",
     "source": "gamesf"
   },
   {
-    "id": "clfnafsl",
-    "name": "Fnaf Sister",
-    "cover": "",
-    "url": "sussybakabois/gamesf/clfnafsl.html",
+    "id": "flappy-bird",
+    "name": "Flappy Bird",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/21ZzpgClpiL.png",
+    "url": "https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/TAhlQLDa/index.html",
+    "source": "external"
+  },
+  {
+    "id": "fleeing",
+    "name": "Fleeing Complex",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Fleeing.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/fleeing.html",
     "source": "gamesf"
+  },
+  {
+    "id": "Fnaf1",
+    "name": "Fnaf 1",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/FNAF1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Fnaf1.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Fnaf2",
+    "name": "Fnaf 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/FNAF2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Fnaf2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Fnaf3",
+    "name": "Fnaf 3",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/FNAF3.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Fnaf3.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "fnaf3d",
+    "name": "Fnaf 3D",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/fanfafaf3d.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/fnaf3d.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Fnaf4",
+    "name": "Fnaf 4",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/FNAF4.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Fnaf4.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "fcg",
+    "name": "Fnaf Custom",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/customsaus.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/fcg.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clfootballbros",
+    "name": "Football Bros",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/football-bros.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clfootballbros.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clfridaynightfunkin",
+    "name": "Fridaynight Funkin",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/friday-night-funkin_1x1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clfridaynightfunkin.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "fruit",
+    "name": "Fruit Ninja",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/fruit-ninja-2020-08-31.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/fruit.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "funnyshooter-2",
+    "name": "Funnyshooter 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/funny-shooter-2_1x1-cover.png",
+    "url": "https://storage.googleapis.com/test-41376.appspot.com/fs2.html",
+    "source": "external"
   },
   {
     "id": "gas-station",
     "name": "Gas Station",
-    "cover": "sussybakabois/icons/gastattioin.png",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/gastattioin.png",
     "url": "https://rawcdn.githack.com/SenpaiX1/fgesdgds/f421403431b191feb3d8b15e73eb5d55f5b157c5/index.html",
     "source": "external"
   },
   {
+    "id": "gateboi-1",
+    "name": "Gateway Shootout",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/getaway-shootout_1x1-cover.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/gateboi-1.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "geometry",
+    "name": "Geometry Dash Lite",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Geo.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/geometry.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "geovibez",
+    "name": "Geomtry Vibe",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/geovibe.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/geovibez.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Gladihoppers",
+    "name": "Gladihoppers",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/gladihoppers.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Gladihoppers.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "golf-orbit",
+    "name": "Golf Orbit",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/orbitt.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/golfboi/dc511fd1683c566f9c84063aee44a80f4a7a31b0/index.html",
+    "source": "external"
+  },
+  {
+    "id": "Google_Feud",
+    "name": "Google Fued",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/google-feud_1x1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Google_Feud.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "gsnake",
+    "name": "Google Snake",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/google-snake-icon-filled-256.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/gsnake.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Granny",
+    "name": "Granny",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Granny.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Granny.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "gran2",
+    "name": "Granny 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/granban2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/gran2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "grave",
+    "name": "Grave",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/H63g9o.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/grave/main/index.html",
+    "source": "external"
+  },
+  {
+    "id": "gunbin",
+    "name": "Gun Spin",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/bunspin.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/gunbin.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "gym-simulator",
+    "name": "Gym Simulator",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/gymwork.jpg",
+    "url": "https://script.google.com/macros/s/AKfycbxLkugSSEdQm0qJQ4PZWRce6p8pKpuPdLIFeivG0cMt-QmjEjedBCarzz_kd2tlvxzs/exec",
+    "source": "external"
+  },
+  {
+    "id": "HollowKnight",
+    "name": "Hallow Knight",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/hollowk.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/HollowKnight.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "happy-wheels",
+    "name": "Happy Wheels",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/happyywheeeel.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/baboi/e79b438621f5556c032f5a1636ec3962e70d8cad/index.html",
+    "source": "external"
+  },
+  {
+    "id": "hard",
+    "name": "Hardware Tycoon",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/9NRGWa.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/hard.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clhillclimbracinglite",
+    "name": "Hill Climb Racing",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/GZdB4dtW8AAeEbV.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clhillclimbracinglite.html",
+    "source": "gamesf"
+  },
+  {
     "id": "clhobo",
     "name": "Hobo 1",
-    "cover": "sussybakabois/icons/hoboo1.png",
-    "url": "sussybakabois/gamesf/clhobo.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/hoboo1.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clhobo.html",
     "source": "gamesf"
   },
   {
     "id": "clhobo2",
     "name": "Hobo 2",
-    "cover": "sussybakabois/icons/hoooboo2.png",
-    "url": "sussybakabois/gamesf/clhobo2.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/hoooboo2.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clhobo2.html",
     "source": "gamesf"
   },
   {
     "id": "clhobo3",
     "name": "Hobo 3",
-    "cover": "sussybakabois/icons/hobooo3.png",
-    "url": "sussybakabois/gamesf/clhobo3.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/hobooo3.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clhobo3.html",
     "source": "gamesf"
   },
   {
     "id": "clhobo4",
     "name": "Hobo 4",
-    "cover": "sussybakabois/icons/hoobooo4.png",
-    "url": "sussybakabois/gamesf/clhobo4.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/hoobooo4.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clhobo4.html",
     "source": "gamesf"
+  },
+  {
+    "id": "hole",
+    "name": "Hole.io",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/hole-io.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/hole.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "hotdawg",
+    "name": "Hot Dog Bush",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/dawgbush.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/hotdawg.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "runny",
+    "name": "Hotline Miami",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/hot.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/runny.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "houseof",
+    "name": "House Of Hazards",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/house-of-hazards_1x1-cover.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/houseof.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clhoverracerdrive",
+    "name": "Hover Racer Drive",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/hover-racer-drive.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clhoverracerdrive.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "aquapark",
+    "name": "Idle Aqua Park",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/aquaparklol.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/aquapark.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "ship",
+    "name": "Infiltraiting The Airship",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Airship.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/ship.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "icraft",
+    "name": "Infinite Craft",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/4d455d6cdff443b5855ee472dff23f8c-512x384.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/icraft.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "cljacksmithencryptedorsmthn",
+    "name": "Jacksmith",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/jacksmit.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/cljacksmithencryptedorsmthn.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Jetpack",
+    "name": "Jetpack Joyride",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/JetPack.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Jetpack.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Karlson",
+    "name": "Karlson",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/capsule_616x353.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Karlson.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "kartbros",
+    "name": "Kartbros",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/kart-bros-b1.jpg",
+    "url": "https://script.google.com/macros/s/AKfycbxb8isaXXwqY7h3OqafbfonnaOEmyfyK8ZQoMvgT-HGwUSfpJoK5Aim1Ca3fvKvEqxj/exec",
+    "source": "external"
   },
   {
     "id": "clkilltheiceagebabyadventure",
     "name": "Kill The Ice Age Baby",
-    "cover": "sussybakabois/icons/killzaicebabi.png",
-    "url": "sussybakabois/gamesf/clkilltheiceagebabyadventure.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/killzaicebabi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clkilltheiceagebabyadventure.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Kindergarten",
+    "name": "Kindergarten",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/46358_Kindergarten.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Kindergarten.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Kindergarten_2",
+    "name": "Kindergarten 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/kinder2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Kindergarten_2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Kindergarten_3",
+    "name": "Kindergarten 3",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/kinder3.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Kindergarten_3.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "fly2",
+    "name": "Learn 2 Fly 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/learn2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/fly2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Learn2Fly3",
+    "name": "Learn To Fly 3",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Learn3.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Learn2Fly3.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "legobat",
+    "name": "Lego Batman",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ds_lego_batman_the_videogame-110214.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/legobat.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clleveldevil",
+    "name": "Level Devil",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/level-devil.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clleveldevil.html",
     "source": "gamesf"
   },
   {
     "id": "cllittlealchemy2",
     "name": "Little Alchemy 2",
-    "cover": "sussybakabois/icons/lilalchemy2.png",
-    "url": "sussybakabois/gamesf/cllittlealchemy2.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/lilalchemy2.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/cllittlealchemy2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "m5fixed",
+    "name": "M5 Highway Racer",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/m5d5.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/m5fixed.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "madalinstuntcarsfixed",
+    "name": "Madalin Stunt Cars",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/madalinstuny.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/madalinstuntcarsfixed.html",
     "source": "gamesf"
   },
   {
     "id": "clsupermarioallstars",
     "name": "Mario Allstars",
-    "cover": "sussybakabois/icons/astmario.png",
-    "url": "sussybakabois/gamesf/clsupermarioallstars.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/astmario.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clsupermarioallstars.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "melon-sandbox",
+    "name": "Melon Sandbox",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/melonsandbox.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/testingwater/0c05a72ba657143f1572fd417d90378e6f5cfc8b/index.html",
+    "source": "external"
+  },
+  {
+    "id": "tinyfishing",
+    "name": "Minecraft",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/minecraft_logo_icon_168974.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/tinyfishing.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "monkeydoi",
+    "name": "Monkey Mart",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/monkey-mart.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/monkeydoi.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "monstertruckk",
+    "name": "Monster Tracks",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/monster-tracks.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/monstertruckk.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "mortal",
+    "name": "Mortal Kombat",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/mortalk.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/mortal.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "moto",
+    "name": "Moto X3M 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/MOTO.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/moto.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "motopool",
+    "name": "Moto X3M Pool",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/MOTOpool.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/motopool.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "motospook",
+    "name": "Moto X3M Spooky",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/MOTOspooky.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/motospook.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "motowinter",
+    "name": "Moto X3M Winter",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/MOTOwinter.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/motowinter.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clmrracer",
+    "name": "Mr Racer",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/mrracerrboi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clmrracer.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "kingsbings",
+    "name": "Murder",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/murder_1x1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/kingsbings.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "neon-blasters",
+    "name": "Neon Blasters",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/6242_5eb3e838ec79d.jpg",
+    "url": "https://script.google.com/macros/s/AKfycbyrD6eAAeG8uwUWVUyzAEk0oAHDWQZz0SW9hxUplVfcurspNtWSeoivayJW2ifs4lRj/exec",
+    "source": "external"
+  },
+  {
+    "id": "nimrod",
+    "name": "Nimrods",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/nimrods-1705440128668.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/nimrod.html",
     "source": "gamesf"
   },
   {
     "id": "clobbyrainbowtower",
     "name": "Obby Rainbow Tower",
-    "cover": "sussybakabois/icons/rainboiwobbytow.png",
-    "url": "sussybakabois/gamesf/clobbyrainbowtower.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/rainboiwobbytow.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clobbyrainbowtower.html",
     "source": "gamesf"
   },
   {
     "id": "clovooo",
     "name": "Ovo",
-    "cover": "sussybakabois/icons/ovoooo.png",
-    "url": "sussybakabois/gamesf/clovooo.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ovoooo.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clovooo.html",
     "source": "gamesf"
   },
   {
     "id": "clovo2",
     "name": "Ovo 2",
-    "cover": "sussybakabois/icons/ovooo2.png",
-    "url": "sussybakabois/gamesf/clovo2.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ovooo2.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clovo2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clpapassushiria",
+    "name": "Papa Sushiria",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/suhsiri.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clpapassushiria.html",
     "source": "gamesf"
   },
   {
     "id": "clpapascheeseria",
     "name": "Papa's Cheesria",
-    "cover": "sussybakabois/icons/papacheeeeese.png",
-    "url": "sussybakabois/gamesf/clpapascheeseria.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/papacheeeeese.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clpapascheeseria.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clpapadonut",
+    "name": "Papa's Donuteria",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/papas-donuteria.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clpapadonut.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "popfreeze",
+    "name": "Papa's Freezeria",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/papasussfreeze.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/popfreeze.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clpapaspastaria",
+    "name": "Papa's Pastaria",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/PapaPastarian.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clpapaspastaria.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "papa",
+    "name": "Papa's Pizzaria",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Pizzeria.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/papa.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "tacosus",
+    "name": "Papa's Tacomia",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/tacomia.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/tacosus.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "doggydog",
+    "name": "Papa\u00e2\u0080\u0099s Hot Doggeria",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/doggyboi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/doggydog.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "paper-flight",
+    "name": "Paper Flight",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/paper.jpeg",
+    "url": "https://rawcdn.githack.com/SenpaiX1/boiboiboi/main/index.html",
+    "source": "external"
+  },
+  {
+    "id": "papper",
+    "name": "Paper.io",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/paperio-2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/papper.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "ping",
+    "name": "Ping Pong",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ping-pong-go.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/ping.html",
     "source": "gamesf"
   },
   {
     "id": "plagincc",
     "name": "Plague INC REAL",
-    "cover": "",
-    "url": "sussybakabois/gameSite/plagincc.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/plaguei.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gameSite/plagincc.html",
     "source": "wrapper"
+  },
+  {
+    "id": "plink",
+    "name": "Plinko",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Plinkboi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/plink.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clpokeplatinum",
+    "name": "Pokemon Platnium",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/pokemooplat.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clpokeplatinum.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Red",
+    "name": "Pokemon Red",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/PokemonR.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Red.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "xy",
+    "name": "Pokemon X&Y",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/2482818-pokemonxy.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/xy.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "poker",
+    "name": "Poker",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/4c08a35029a7d0754045ac74da9a99f6.jpg",
+    "url": "https://rawcdn.githack.com/SenpaiX1/hjrhes/main/index.html",
+    "source": "external"
+  },
+  {
+    "id": "polybuild",
+    "name": "Polybuild",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/polybrid.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/polybuild.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "poly2",
+    "name": "Polytrack",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/7i2ixZ.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/poly2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "pushyy",
+    "name": "Push Your Luck",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/pushyybaka.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/pushyy.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clpvz2gardenless",
+    "name": "Pvz Gardenless",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/pvz_logo200.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clpvz2gardenless.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clraftwars",
+    "name": "Raft Wars",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/raft-wars.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clraftwars.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clraftwars2",
+    "name": "Raft Wars 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/raft-wars-2.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clraftwars2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "ragdoll",
+    "name": "Ragdoll Archers",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Ragdoll.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/ragdoll.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "radghit",
+    "name": "Ragdoll Hit",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ragdoll-hit.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/radghit.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "rally",
+    "name": "Rally Point",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/rally-point.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/rally.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "reboil",
+    "name": "Recoil",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/recoilboi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/reboil.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clredball",
+    "name": "Red Ball 1",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/red-ball-1-3419.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clredball.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clredball2",
+    "name": "Red Ball 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/red-ball-2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clredball2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clredball3",
+    "name": "Red Ball 3",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/red-ball-3.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clredball3.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clredball4",
+    "name": "Red Ball 4",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/red-ball-4.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clredball4.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "resievi2",
+    "name": "Resident Evil 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/NTSC_Resident_Evil_2_Cover.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/resievi2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "retro",
+    "name": "Retro Bowl",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Retro.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/retro.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clretrobowlcollege",
+    "name": "Retrobowl College",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/retrobowlcollege.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clretrobowlcollege.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Riddle_School",
+    "name": "Riddle School",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/riddlesh.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Riddle_School.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clriddleschool2",
+    "name": "Riddle School 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/riddle-school-2.78d3ed.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clriddleschool2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clriddleschool3",
+    "name": "Riddle School 3",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/riddle-school-3.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clriddleschool3.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clriddleschool4",
+    "name": "Riddle School 4",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/co61ow.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clriddleschool4.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "riddleschool5",
+    "name": "Riddle School 5",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/flash_532179_card.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/riddleschool5.html",
+    "source": "gamesf"
   },
   {
     "id": "lyferoblox",
     "name": "Roblox",
-    "cover": "",
-    "url": "sussybakabois/gameSite/lyferoblox.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Roblox_app_icon_2022-copy.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gameSite/lyferoblox.html",
     "source": "wrapper"
+  },
+  {
+    "id": "rockd",
+    "name": "Rocket Soccer Derby",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/rocket.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/rockd.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "rooftop",
+    "name": "Rooftop Snipers",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/RT.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/rooftop.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "rooftop2",
+    "name": "Rooftop Snipers 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/RT2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/rooftop2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "runboy",
+    "name": "Run 3",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/run-3.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/runboy.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "shippy",
+    "name": "Shipo.io",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ayosussssy.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/shippy.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "silentbill",
+    "name": "Silent Hill (PS EDITION)",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/1397386b7a1507535c59764a15ee0c98.ico",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/silentbill.html",
+    "source": "gamesf"
   },
   {
     "id": "clskinwalker",
     "name": "Skinwalker",
-    "cover": "sussybakabois/icons/skinwalkker.png",
-    "url": "sussybakabois/gamesf/clskinwalker.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/skinwalkker.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clskinwalker.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "slenderm",
+    "name": "Slenderman",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/slender8.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/slenderm.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "slither-io",
+    "name": "Slither.io",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/028153c8-97e9-4f67-826f-99e0e13d3433.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/slitherboi/main/index.html",
+    "source": "external"
+  },
+  {
+    "id": "Slope",
+    "name": "Slope",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Slope.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Slope.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clslope2player",
+    "name": "SLOPE 2 Player",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/slope-2.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clslope2player.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "slowroad",
+    "name": "Slowroad",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/slow-roads.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/slowroad.html",
     "source": "gamesf"
   },
   {
     "id": "clasmallworldcup",
     "name": "Small World Cup",
-    "cover": "sussybakabois/icons/smallwc.png",
-    "url": "sussybakabois/gamesf/clasmallworldcup.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/smallwc.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clasmallworldcup.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Snow",
+    "name": "Snow Rider 3D",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Snow.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Snow.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "solar",
+    "name": "Solar Smash",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Solarsmashlogo.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/solar.html",
     "source": "gamesf"
   },
   {
     "id": "clsoniccolors",
     "name": "Sonic",
-    "cover": "sussybakabois/icons/soniccclassiccc.png",
-    "url": "sussybakabois/gamesf/clsoniccolors.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/soniccclassiccc.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clsoniccolors.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Sonic_CD_gn-math",
+    "name": "Sonic Cd",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/sonicdd.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Sonic_CD_gn-math.html",
     "source": "gamesf"
   },
   {
     "id": "clfnfsonicexe4",
     "name": "Sonic Exe",
-    "cover": "sussybakabois/icons/07b6beab22b3133a8aea3bb32c4bd8f1.png",
-    "url": "sussybakabois/gamesf/clfnfsonicexe4.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/07b6beab22b3133a8aea3bb32c4bd8f1.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clfnfsonicexe4.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "golf",
+    "name": "Sort The Court",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Sort.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/golf.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "stack",
+    "name": "Stack",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/stckblack.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/stack.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "snowb",
+    "name": "State.io",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/stateate.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/snowb.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "jemjj",
+    "name": "Steal The Diamond",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/stealing-the-diamond.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/jemjj.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clstickmanhook",
+    "name": "Stickman Hook",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/stickman-hook.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clstickmanhook.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clstickmankombat2d",
+    "name": "Stickman Kombat",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/stickmankom.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clstickmankombat2d.html",
     "source": "gamesf"
   },
   {
     "id": "clsfk",
     "name": "Strike Force Kitty",
-    "cover": "sussybakabois/icons/strikeforcekitt.png",
-    "url": "sussybakabois/gamesf/clsfk.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/strikeforcekitt.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clsfk.html",
     "source": "gamesf"
   },
   {
     "id": "clsfk2",
     "name": "Strike Force Kitty 2",
-    "cover": "sussybakabois/icons/stikrekitty2.png",
-    "url": "sussybakabois/gamesf/clsfk2.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/stikrekitty2.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clsfk2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Subway",
+    "name": "Subway Surfers",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Subway.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Subway.html",
     "source": "gamesf"
   },
   {
     "id": "success-simulator",
     "name": "Success Simulator",
-    "cover": "sussybakabois/icons/susccesssim.png",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/susccesssim.png",
     "url": "https://rawcdn.githack.com/SenpaiX1/saf32/41b343a623a1a3f641d40e65d37800f84d2e2707/index.html",
     "source": "external"
   },
   {
+    "id": "summer-rider-3d",
+    "name": "Summer Rider 3D",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/3ff5df9f5d0248fd9dcd70e2cc253de5-512x512.jpg",
+    "url": "https://rawcdn.githack.com/SenpaiX1/re/main/index.html",
+    "source": "external"
+  },
+  {
+    "id": "supahot",
+    "name": "SuperHot",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/bcPCs06SjrXaOxa2oeuk2OBD.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/supahot.html",
+    "source": "gamesf"
+  },
+  {
     "id": "clnewsupermariobros",
     "name": "Supermariobros",
-    "cover": "sussybakabois/icons/newsupmariobrooos.png",
-    "url": "sussybakabois/gamesf/clnewsupermariobros.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/newsupmariobrooos.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clnewsupermariobros.html",
     "source": "gamesf"
   },
   {
     "id": "survivorio",
     "name": "Survivor.Io",
-    "cover": "sussybakabois/icons/survivrrio.png",
-    "url": "sussybakabois/gamesf/survivorio.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/survivrrio.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/survivorio.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "tabs",
+    "name": "Tabs",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/tabslol.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/tabs.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "cltagc3",
+    "name": "Tag",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/tag-game-banner-tgio.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/cltagc3.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "tank-stars",
+    "name": "Tank Stars",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/taknkstars.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/bruhboi/4b3ba10482f3bad3aefc02e110e0e25ff9e8b12c/index.html",
+    "source": "external"
+  },
+  {
+    "id": "temple",
+    "name": "Temple Run2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/Temple2.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/temple.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "Tetris",
+    "name": "Tetris",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/tetriiis.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/Tetris.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "tgc",
+    "name": "Tgc Card",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/tgce.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/tgc.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "thatsnotmyneighbor",
+    "name": "That's Not My Neighbor",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/thatsnot.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/thatsnotmyneighbor.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "impossible",
+    "name": "The Impossible Quiz",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/the-impossible-quiz_1x1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/impossible.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "CL_Visitor",
+    "name": "The Visitor",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/thevisit.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/CL_Visitor.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "visitor3",
+    "name": "The Visitor 2",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/The-Visitor-Returns.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/visitor3.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "visitor2",
+    "name": "The Visitor 3",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/the-visitor-massacre-at-camp-happy.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/visitor2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "worldh",
+    "name": "The World's Hardest Game",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/3fd7ced4d1db27c18c95d91b25d9a3a4.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/worldh.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "coming",
+    "name": "They Are Coming",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/249229_1.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/coming.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "tombboi",
+    "name": "Tomb Of The Mask",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/tomboisus.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/tombboi.html",
     "source": "gamesf"
   },
   {
     "id": "trafficracer",
     "name": "Traffic Racer",
-    "cover": "sussybakabois/icons/traffficracer.png",
-    "url": "sussybakabois/gamesf/trafficracer.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/traffficracer.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/trafficracer.html",
     "source": "gamesf"
   },
   {
     "id": "tung-tung-horror",
     "name": "Tung Tung Horror",
-    "cover": "sussybakabois/icons/gametiles_horror.tung.sahur.jpg",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/gametiles_horror.tung.sahur.jpg",
     "url": "https://bakawaka.ai1490.com/gamefile/tung.html",
     "source": "external"
   },
   {
-    "id": "Untitled Goose Game",
-    "name": "Untitled Goose Game",
-    "cover": "sussybakabois/icons/gooosegameee.png",
-    "url": "sussybakabois/gamesf/Untitled Goose Game.html",
+    "id": "clUltimatecardrivingsimulator",
+    "name": "Ultimate Car Driving Simulator",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ultimatecardrive.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clUltimatecardrivingsimulator.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "ULTRAKILL",
+    "name": "Ultrakill",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/ultraboi.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/ULTRAKILL.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clundertale",
+    "name": "Undertale",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/590f06b45bafe37b970cbcbc.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clundertale.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "velo",
+    "name": "Veloce",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/velocee.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/velo.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "vex66",
+    "name": "Vex 6",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/vex6.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/vex66.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "vex77",
+    "name": "Vex 7",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/vex-7.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/vex77.html",
     "source": "gamesf"
   },
   {
     "id": "grand_thef_auto_vice_city",
     "name": "Vice City",
-    "cover": "sussybakabois/icons/viceeec.png",
-    "url": "sussybakabois/gamesf/grand_thef_auto_vice_city.html",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/viceeec.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/grand_thef_auto_vice_city.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "volleyb",
+    "name": "Volleyball Challenge",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/volleyboi.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/volleyb.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "warboi",
+    "name": "War Knights",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/orig.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/warboi.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "clwebecomewhatwebehold",
+    "name": "We Become What We Behold",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/we-become-what-we-behold.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clwebecomewhatwebehold.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "wrestlebro",
+    "name": "Wrestle Bros",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/wrestle-bros.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/wrestlebro.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "yandre",
+    "name": "Yandere Simulator",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/a2460912973_16.jpg",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/yandre.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "youtube",
+    "name": "Youtube",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/channels4_profile.jpg",
+    "url": "https://rawcdn.githack.com/SenpaiX1/cutthe/f2cd9f151d8aa07ffbd2f890b7f9ea817a2b4871/index.html",
+    "source": "external"
+  },
+  {
+    "id": "clzombotronreboot",
+    "name": "Zombotron-Reboot",
+    "cover": "https://bakaboiz.jakefirenze778.workers.dev/games/images/zombotronn.png",
+    "url": "https://bakaboiz.jakefirenze778.workers.dev/games/gamesf/clzombotronreboot.html",
     "source": "gamesf"
   }
 ]

@@ -1,19 +1,19 @@
 """
-Build the sussybakabois catalog by walking games/index.html for every card,
-resolving each gameSite/X.html wrapper -> its ../gamesf/Y.html target via the
-wrapper's iframe, and emitting a catalog whose URLs point DIRECTLY at gamesf/
-(skipping the wrapper page entirely).
+Build sussybakabois catalog. Three kinds of entries:
 
-Also picks up any gamesf/*.html files that have no card in the index.
+  1) gamesf-mapped   : local /sussybakabois/gamesf/Y.html   (self-contained; uses CDN base href)
+  2) external-iframe : the external iframe src from the wrapper page
+  3) wrapper         : /sussybakabois/gameSite/X.html       (wrapper's own JS resolves final URL)
+
+Rebuilds catalog + copies files. Idempotent.
 """
-import json
-import re
-import shutil
+import json, re, shutil
 from pathlib import Path
 
 SRC = Path("/app/work/sussy/HTML-CSS-JS-Static-1/games")
 OUT = Path("/app/frontend/public/sussybakabois")
 (OUT / "gamesf").mkdir(parents=True, exist_ok=True)
+(OUT / "gameSite").mkdir(parents=True, exist_ok=True)
 (OUT / "icons").mkdir(parents=True, exist_ok=True)
 
 index_html = (SRC / "index.html").read_text(encoding="utf-8", errors="ignore")
@@ -21,23 +21,30 @@ have_gamesf = {p.name for p in (SRC / "gamesf").iterdir() if p.is_file()}
 have_icons = {p.name for p in (SRC / "icons").iterdir() if p.is_file()}
 have_gameSite = {p.name for p in (SRC / "gameSite").iterdir() if p.is_file()}
 
-# ---- 1. Build wrapper -> gamesf mapping by grepping each wrapper's iframe src. ----
-IFRAME_RE = re.compile(r'<iframe[^>]*src="([^"]+)"', re.DOTALL | re.IGNORECASE)
-wrapper_to_gamesf = {}
-for name in have_gameSite:
+# --- Classify every gameSite wrapper. ---
+IFRAME_RE = re.compile(r'<iframe[^>]*src="([^"]+)"', re.S | re.I)
+# Wrappers that dynamically build the final URL in JS (nowgg cloud gaming style)
+NEEDS_WRAPPER_TOKENS = ("sus.ai1490.com/embed", "ip.nowgg.fun", "window.location.search")
+
+# name -> {"kind": "gamesf"|"external"|"wrapper", "target": path_or_url}
+wrapper_kind = {}
+for name in sorted(have_gameSite):
     text = (SRC / "gameSite" / name).read_text(encoding="utf-8", errors="ignore")
     m = IFRAME_RE.search(text)
-    if not m:
-        continue
-    src = m.group(1).strip()
-    # Normalise ../gamesf/foo.html and gamesf/foo.html and /games/gamesf/foo.html
-    m2 = re.search(r"gamesf/([^/'\"]+\.html)", src)
-    if m2 and m2.group(1) in have_gamesf:
-        wrapper_to_gamesf[name] = m2.group(1)
+    if m:
+        src = m.group(1).strip()
+        m2 = re.search(r"gamesf/([^/'\"]+\.html)", src)
+        if m2 and m2.group(1) in have_gamesf:
+            wrapper_kind[name] = {"kind": "gamesf", "target": m2.group(1)}
+            continue
+        if src.startswith("http://") or src.startswith("https://"):
+            wrapper_kind[name] = {"kind": "external", "target": src}
+            continue
+    # No iframe (or unresolved iframe): if it looks like a JS-driven wrapper, keep it
+    if any(tok in text for tok in NEEDS_WRAPPER_TOKENS):
+        wrapper_kind[name] = {"kind": "wrapper", "target": name}
 
-print(f"Resolved {len(wrapper_to_gamesf)} wrapper -> gamesf mappings")
-
-# ---- 2. Walk index.html for every unique card and pull (name, icon, wrapper_href). ----
+# --- Card scanner from index.html ---
 def clean_name(raw):
     raw = re.sub(r"<span[^>]*(?:update-tag|online-tag|new-tag)[^>]*>.*?</span>",
                  "", raw, flags=re.I | re.S)
@@ -57,76 +64,92 @@ def title_from_filename(fn):
 CARD_RE = re.compile(
     r"<h1[^>]*>(?P<name>.*?)</h1>"
     r"(?P<mid>.*?)"
-    r"src=\"icons/(?P<icon>[^\"]+)\""
+    r"<img[^>]*?src=\"(?P<icon>[^\"]+)\""
     r"(?P<mid2>.*?)"
     r"onclick=\"window\.location\.href='gameSite/(?P<game>[^']+)'\"",
     re.DOTALL | re.IGNORECASE,
 )
 
-# Also pick up cards that link directly to gamesf/ instead of gameSite/
-CARD_RE_GAMESF = re.compile(
-    r"<h1[^>]*>(?P<name>.*?)</h1>"
-    r"(?P<mid>.*?)"
-    r"src=\"icons/(?P<icon>[^\"]+)\""
-    r"(?P<mid2>.*?)"
-    r"onclick=\"window\.location\.href='gamesf/(?P<game>[^']+)'\"",
-    re.DOTALL | re.IGNORECASE,
-)
-
-# id -> {name, icon, gamesf_file}
+# entries keyed by (kind, target) so we dedupe by final destination
 catalog = {}
 
-def add(gamesf_file, name, icon):
-    if gamesf_file not in have_gamesf:
+def add(kind, target, name, icon, wrapper=None):
+    key = (kind, target)
+    if key in catalog:
         return
-    if gamesf_file in catalog:
-        return
-    if icon and icon not in have_icons:
-        icon = None
-    catalog[gamesf_file] = {"name": name or title_from_filename(gamesf_file), "icon": icon}
+    # Icon: only keep it if the exact basename exists in our icons/ dir.
+    if icon:
+        icon = Path(icon).name
+        if icon not in have_icons:
+            icon = None
+    if not name:
+        name = title_from_filename(wrapper or target)
+    catalog[key] = {"name": name, "icon": icon, "kind": kind, "target": target}
 
 for m in CARD_RE.finditer(index_html):
     wrapper = m.group("game")
-    gamesf_file = wrapper_to_gamesf.get(wrapper)
-    if not gamesf_file:
-        continue
-    add(gamesf_file, clean_name(m.group("name")), m.group("icon"))
+    info = wrapper_kind.get(wrapper)
+    if not info:
+        continue  # dead link
+    add(info["kind"], info["target"], clean_name(m.group("name")),
+        m.group("icon"), wrapper=wrapper)
 
-for m in CARD_RE_GAMESF.finditer(index_html):
-    add(m.group("game"), clean_name(m.group("name")), m.group("icon"))
+# Sweep: for any wrapper we recognised but that never got a card in index.html,
+# add it with a derived name so it's still surfaced.
+seen_targets = {(v["kind"], v["target"]) for v in catalog.values()}
+for w, info in wrapper_kind.items():
+    if (info["kind"], info["target"]) not in seen_targets:
+        add(info["kind"], info["target"], title_from_filename(w), None, wrapper=w)
 
-# Any gamesf file that has no matching card yet — include with a derived name.
-covered = set(catalog.keys())
+# Also sweep gamesf/ files that were never referenced anywhere.
+gamesf_covered = {v["target"] for v in catalog.values() if v["kind"] == "gamesf"}
 for gf in have_gamesf:
-    if gf not in covered:
-        add(gf, title_from_filename(gf), None)
+    if gf not in gamesf_covered:
+        add("gamesf", gf, title_from_filename(gf), None)
 
-print(f"Total catalog entries: {len(catalog)}  (from {len(have_gamesf)} gamesf files)")
-
-# ---- 3. Copy assets. ----
+# --- Copy assets. ---
 for gf in have_gamesf:
     shutil.copy2(SRC / "gamesf" / gf, OUT / "gamesf" / gf)
 for icon in have_icons:
     shutil.copy2(SRC / "icons" / icon, OUT / "icons" / icon)
+# Only copy the gameSite wrappers we actually reference (kind=="wrapper")
+needed_wrappers = {v["target"] for v in catalog.values() if v["kind"] == "wrapper"}
+# clean out any stale files first
+for p in (OUT / "gameSite").iterdir():
+    if p.name not in needed_wrappers:
+        p.unlink()
+for w in needed_wrappers:
+    shutil.copy2(SRC / "gameSite" / w, OUT / "gameSite" / w)
 
-# Drop the old gameSite copies — we're not using wrappers anymore.
-old_gs = OUT / "gameSite"
-if old_gs.exists():
-    shutil.rmtree(old_gs)
-    print("Removed obsolete /gameSite/ directory")
+# --- Write catalog.json ---
+def entry_url(v):
+    if v["kind"] == "gamesf":
+        return f"sussybakabois/gamesf/{v['target']}"
+    if v["kind"] == "wrapper":
+        return f"sussybakabois/gameSite/{v['target']}"
+    return v["target"]  # external
 
-# ---- 4. Write catalog.json sorted by name. ----
 games_list = []
-for gamesf_file, meta in sorted(catalog.items(), key=lambda kv: kv[1]["name"].lower()):
+for (kind, target), meta in catalog.items():
     games_list.append({
-        "id": Path(gamesf_file).stem,
+        "id": Path(target).stem if kind != "external" else re.sub(r"[^a-z0-9]+", "-", meta["name"].lower()).strip("-"),
         "name": meta["name"],
         "cover": f"sussybakabois/icons/{meta['icon']}" if meta["icon"] else "",
-        "url": f"sussybakabois/gamesf/{gamesf_file}",
+        "url": entry_url(meta),
+        "source": kind,   # "gamesf" | "wrapper" | "external"
     })
+games_list.sort(key=lambda g: g["name"].lower())
 
 (OUT / "catalog.json").write_text(json.dumps(games_list, indent=2), encoding="utf-8")
-print(f"Wrote {len(games_list)} games to catalog.json")
-print("Sample:")
-for g in games_list[:8]:
-    print(f"  - {g['name']}  ->  {g['url']}  cover={g['cover'] or '(none)'}")
+
+by_kind = {}
+for g in games_list:
+    by_kind[g["source"]] = by_kind.get(g["source"], 0) + 1
+
+print(f"Wrote {len(games_list)} games:")
+for k, n in by_kind.items():
+    print(f"  {k:10s} : {n}")
+print("\nNon-local entries (external / wrapper):")
+for g in games_list:
+    if g["source"] != "gamesf":
+        print(f"  [{g['source']:8s}] {g['name']}  ->  {g['url'][:80]}")

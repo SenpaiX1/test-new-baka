@@ -1,206 +1,282 @@
 [
   {
+    "id": "angry-birds-epic",
+    "name": "Angry Birds Epic",
+    "cover": "sussybakabois/icons/angrybirddsepic.png",
+    "url": "https://bakawaka.ai1490.com/games/Epic/index.html",
+    "source": "external"
+  },
+  {
     "id": "clbaldiepstein",
     "name": "Baldi Jeffrey",
     "cover": "sussybakabois/icons/jeffbaldi.png",
-    "url": "sussybakabois/gamesf/clbaldiepstein.html"
+    "url": "sussybakabois/gamesf/clbaldiepstein.html",
+    "source": "gamesf"
   },
   {
     "id": "beeswarmm",
     "name": "Bee Swarm Sim",
     "cover": "sussybakabois/icons/beesimmmm.png",
-    "url": "sussybakabois/gamesf/beeswarmm.html"
+    "url": "sussybakabois/gamesf/beeswarmm.html",
+    "source": "gamesf"
   },
   {
     "id": "clbobasimulator",
     "name": "Boba Simulator",
     "cover": "sussybakabois/icons/bobasimmma.png",
-    "url": "sussybakabois/gamesf/clbobasimulator.html"
+    "url": "sussybakabois/gamesf/clbobasimulator.html",
+    "source": "gamesf"
   },
   {
     "id": "Brotato",
     "name": "Brotato",
     "cover": "sussybakabois/icons/brotattoo.png",
-    "url": "sussybakabois/gamesf/Brotato.html"
+    "url": "sussybakabois/gamesf/Brotato.html",
+    "source": "gamesf"
   },
   {
     "id": "cldouchebagworkou",
     "name": "Douchebag Workout",
     "cover": "sussybakabois/icons/doucewoorkout1.png",
-    "url": "sussybakabois/gamesf/cldouchebagworkou.html"
+    "url": "sussybakabois/gamesf/cldouchebagworkou.html",
+    "source": "gamesf"
   },
   {
     "id": "cldouchebagworkout2",
     "name": "Douchebag Workout 2",
     "cover": "sussybakabois/icons/doucheciover2.png",
-    "url": "sussybakabois/gamesf/cldouchebagworkout2.html"
+    "url": "sussybakabois/gamesf/cldouchebagworkout2.html",
+    "source": "gamesf"
   },
   {
     "id": "dumway",
     "name": "Dumb Ways To Die",
     "cover": "sussybakabois/icons/dummmmway.png",
-    "url": "sussybakabois/gamesf/dumway.html"
+    "url": "sussybakabois/gamesf/dumway.html",
+    "source": "gamesf"
   },
   {
     "id": "Endoparasitic",
     "name": "Endoparasitic",
     "cover": "sussybakabois/icons/endoparasticv1.png",
-    "url": "sussybakabois/gamesf/Endoparasitic.html"
+    "url": "sussybakabois/gamesf/Endoparasitic.html",
+    "source": "gamesf"
   },
   {
     "id": "Endoparasitic2",
     "name": "Endoparasitic 2",
     "cover": "sussybakabois/icons/endooo2.png",
-    "url": "sussybakabois/gamesf/Endoparasitic2.html"
+    "url": "sussybakabois/gamesf/Endoparasitic2.html",
+    "source": "gamesf"
   },
   {
     "id": "fnafcandies",
     "name": "Five Nights At Candies",
     "cover": "sussybakabois/icons/fnafffcadie.png",
-    "url": "sussybakabois/gamesf/fnafcandies.html"
+    "url": "sussybakabois/gamesf/fnafcandies.html",
+    "source": "gamesf"
   },
   {
     "id": "clfivenightsatepsteins",
     "name": "Five Nights At Epsteins",
     "cover": "sussybakabois/icons/fnafepisteinnn.png",
-    "url": "sussybakabois/gamesf/clfivenightsatepsteins.html"
+    "url": "sussybakabois/gamesf/clfivenightsatepsteins.html",
+    "source": "gamesf"
   },
   {
     "id": "clfnafsl",
-    "name": "Fnafsl",
+    "name": "Fnaf Sister",
     "cover": "",
-    "url": "sussybakabois/gamesf/clfnafsl.html"
+    "url": "sussybakabois/gamesf/clfnafsl.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "gas-station",
+    "name": "Gas Station",
+    "cover": "sussybakabois/icons/gastattioin.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/fgesdgds/f421403431b191feb3d8b15e73eb5d55f5b157c5/index.html",
+    "source": "external"
   },
   {
     "id": "clhobo",
     "name": "Hobo 1",
     "cover": "sussybakabois/icons/hoboo1.png",
-    "url": "sussybakabois/gamesf/clhobo.html"
+    "url": "sussybakabois/gamesf/clhobo.html",
+    "source": "gamesf"
   },
   {
     "id": "clhobo2",
     "name": "Hobo 2",
     "cover": "sussybakabois/icons/hoooboo2.png",
-    "url": "sussybakabois/gamesf/clhobo2.html"
+    "url": "sussybakabois/gamesf/clhobo2.html",
+    "source": "gamesf"
   },
   {
     "id": "clhobo3",
     "name": "Hobo 3",
     "cover": "sussybakabois/icons/hobooo3.png",
-    "url": "sussybakabois/gamesf/clhobo3.html"
+    "url": "sussybakabois/gamesf/clhobo3.html",
+    "source": "gamesf"
   },
   {
     "id": "clhobo4",
     "name": "Hobo 4",
     "cover": "sussybakabois/icons/hoobooo4.png",
-    "url": "sussybakabois/gamesf/clhobo4.html"
+    "url": "sussybakabois/gamesf/clhobo4.html",
+    "source": "gamesf"
   },
   {
     "id": "clkilltheiceagebabyadventure",
     "name": "Kill The Ice Age Baby",
     "cover": "sussybakabois/icons/killzaicebabi.png",
-    "url": "sussybakabois/gamesf/clkilltheiceagebabyadventure.html"
+    "url": "sussybakabois/gamesf/clkilltheiceagebabyadventure.html",
+    "source": "gamesf"
   },
   {
     "id": "cllittlealchemy2",
     "name": "Little Alchemy 2",
     "cover": "sussybakabois/icons/lilalchemy2.png",
-    "url": "sussybakabois/gamesf/cllittlealchemy2.html"
+    "url": "sussybakabois/gamesf/cllittlealchemy2.html",
+    "source": "gamesf"
   },
   {
     "id": "clsupermarioallstars",
     "name": "Mario Allstars",
     "cover": "sussybakabois/icons/astmario.png",
-    "url": "sussybakabois/gamesf/clsupermarioallstars.html"
+    "url": "sussybakabois/gamesf/clsupermarioallstars.html",
+    "source": "gamesf"
   },
   {
     "id": "clobbyrainbowtower",
     "name": "Obby Rainbow Tower",
     "cover": "sussybakabois/icons/rainboiwobbytow.png",
-    "url": "sussybakabois/gamesf/clobbyrainbowtower.html"
+    "url": "sussybakabois/gamesf/clobbyrainbowtower.html",
+    "source": "gamesf"
   },
   {
     "id": "clovooo",
     "name": "Ovo",
     "cover": "sussybakabois/icons/ovoooo.png",
-    "url": "sussybakabois/gamesf/clovooo.html"
+    "url": "sussybakabois/gamesf/clovooo.html",
+    "source": "gamesf"
   },
   {
     "id": "clovo2",
     "name": "Ovo 2",
     "cover": "sussybakabois/icons/ovooo2.png",
-    "url": "sussybakabois/gamesf/clovo2.html"
+    "url": "sussybakabois/gamesf/clovo2.html",
+    "source": "gamesf"
   },
   {
     "id": "clpapascheeseria",
     "name": "Papa's Cheesria",
     "cover": "sussybakabois/icons/papacheeeeese.png",
-    "url": "sussybakabois/gamesf/clpapascheeseria.html"
+    "url": "sussybakabois/gamesf/clpapascheeseria.html",
+    "source": "gamesf"
   },
   {
-    "id": "grand_thef_auto_vice_city",
+    "id": "plagincc",
+    "name": "Plague INC REAL",
+    "cover": "",
+    "url": "sussybakabois/gameSite/plagincc.html",
+    "source": "wrapper"
+  },
+  {
+    "id": "lyferoblox",
     "name": "Roblox",
-    "cover": "sussybakabois/icons/viceeec.png",
-    "url": "sussybakabois/gamesf/grand_thef_auto_vice_city.html"
+    "cover": "",
+    "url": "sussybakabois/gameSite/lyferoblox.html",
+    "source": "wrapper"
   },
   {
     "id": "clskinwalker",
     "name": "Skinwalker",
     "cover": "sussybakabois/icons/skinwalkker.png",
-    "url": "sussybakabois/gamesf/clskinwalker.html"
+    "url": "sussybakabois/gamesf/clskinwalker.html",
+    "source": "gamesf"
   },
   {
     "id": "clasmallworldcup",
     "name": "Small World Cup",
     "cover": "sussybakabois/icons/smallwc.png",
-    "url": "sussybakabois/gamesf/clasmallworldcup.html"
+    "url": "sussybakabois/gamesf/clasmallworldcup.html",
+    "source": "gamesf"
   },
   {
     "id": "clsoniccolors",
     "name": "Sonic",
     "cover": "sussybakabois/icons/soniccclassiccc.png",
-    "url": "sussybakabois/gamesf/clsoniccolors.html"
+    "url": "sussybakabois/gamesf/clsoniccolors.html",
+    "source": "gamesf"
   },
   {
     "id": "clfnfsonicexe4",
     "name": "Sonic Exe",
     "cover": "sussybakabois/icons/07b6beab22b3133a8aea3bb32c4bd8f1.png",
-    "url": "sussybakabois/gamesf/clfnfsonicexe4.html"
+    "url": "sussybakabois/gamesf/clfnfsonicexe4.html",
+    "source": "gamesf"
   },
   {
     "id": "clsfk",
     "name": "Strike Force Kitty",
     "cover": "sussybakabois/icons/strikeforcekitt.png",
-    "url": "sussybakabois/gamesf/clsfk.html"
+    "url": "sussybakabois/gamesf/clsfk.html",
+    "source": "gamesf"
   },
   {
     "id": "clsfk2",
     "name": "Strike Force Kitty 2",
     "cover": "sussybakabois/icons/stikrekitty2.png",
-    "url": "sussybakabois/gamesf/clsfk2.html"
+    "url": "sussybakabois/gamesf/clsfk2.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "success-simulator",
+    "name": "Success Simulator",
+    "cover": "sussybakabois/icons/susccesssim.png",
+    "url": "https://rawcdn.githack.com/SenpaiX1/saf32/41b343a623a1a3f641d40e65d37800f84d2e2707/index.html",
+    "source": "external"
   },
   {
     "id": "clnewsupermariobros",
     "name": "Supermariobros",
     "cover": "sussybakabois/icons/newsupmariobrooos.png",
-    "url": "sussybakabois/gamesf/clnewsupermariobros.html"
+    "url": "sussybakabois/gamesf/clnewsupermariobros.html",
+    "source": "gamesf"
   },
   {
     "id": "survivorio",
     "name": "Survivor.Io",
     "cover": "sussybakabois/icons/survivrrio.png",
-    "url": "sussybakabois/gamesf/survivorio.html"
+    "url": "sussybakabois/gamesf/survivorio.html",
+    "source": "gamesf"
   },
   {
     "id": "trafficracer",
     "name": "Traffic Racer",
     "cover": "sussybakabois/icons/traffficracer.png",
-    "url": "sussybakabois/gamesf/trafficracer.html"
+    "url": "sussybakabois/gamesf/trafficracer.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "tung-tung-horror",
+    "name": "Tung Tung Horror",
+    "cover": "sussybakabois/icons/gametiles_horror.tung.sahur.jpg",
+    "url": "https://bakawaka.ai1490.com/gamefile/tung.html",
+    "source": "external"
   },
   {
     "id": "Untitled Goose Game",
     "name": "Untitled Goose Game",
     "cover": "sussybakabois/icons/gooosegameee.png",
-    "url": "sussybakabois/gamesf/Untitled Goose Game.html"
+    "url": "sussybakabois/gamesf/Untitled Goose Game.html",
+    "source": "gamesf"
+  },
+  {
+    "id": "grand_thef_auto_vice_city",
+    "name": "Vice City",
+    "cover": "sussybakabois/icons/viceeec.png",
+    "url": "sussybakabois/gamesf/grand_thef_auto_vice_city.html",
+    "source": "gamesf"
   }
 ]

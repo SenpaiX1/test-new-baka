@@ -6,17 +6,11 @@
 
   Removed:
   - Removed Google Analytics (gtag) inline script (1 occurrence)
-  - Removed Lumin monetization SDK <script> (1 occurrence)
   - Removed effectivecpmnetwork.com ad <script> (1 occurrence)
   - Removed CPM ad self-reinjection setInterval script (1 occurrence)
   - Removed Google Fonts preconnect (fonts.googleapis.com) (1 occurrence)
   - Removed Google Fonts preconnect (fonts.gstatic.com) (1 occurrence)
   - Removed Google Fonts Inter stylesheet <link> (1 occurrence)
-  - Removed Lumin option from header library segment (1)
-  - Removed Lumin option from settings sheet (1)
-  - Changed default library state from 'lumin' -> 'gnmath' (1)
-  - Changed prefs() default library from 'lumin' -> 'gnmath' (1)
-  - Added boot-time migration for stored 'lumin' preference -> 'gnmath' (1)
 
   Notes / caveats:
   - No local assets from the zip were referenced by this HTML, so nothing
@@ -29,8 +23,9 @@
   - The 'Inter' web font was dropped along with the Google Fonts external
     request; the CSS already declares a full ui-sans-serif/system-ui/-apple-
     system/Segoe UI/Roboto/sans-serif fallback, so type still renders cleanly.
-  - The Lumin game library was removed together with the Lumin SDK. The
-    'gnmath' library remains as the sole (and default) source.
+  - The Lumin game library is kept intact — functionally it's the game
+    library provider (getGames, getGameUrl, getImageUrl), not an ad.
+    It routes through a.luminsdk.com to fetch its own game catalog.
 -->
 <html lang="en">
 <head>
@@ -39,6 +34,7 @@
 <meta name="color-scheme" content="dark">
 <title>Nocturne</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%230b0a14'/><circle cx='16' cy='16' r='9' fill='%23c9c1ff'/><circle cx='21' cy='14' r='8' fill='%230b0a14'/></svg>">
+<script async src="https://cdn.jsdelivr.net/gh/luminsdk/script@latest/lumin.min.js"></script>
 <style>
     :root{
         --bg:#05060d; --bg-2:#0a0b16; --bg-3:#12111f;
@@ -188,7 +184,8 @@
         <input id="search" type="text" placeholder="Search games…" autocomplete="off" spellcheck="false">
     </div>
     <div class="seg" id="libSeg">
-        <button data-lib="gnmath" class="on">gnmath</button>
+        <button data-lib="gnmath">gnmath</button>
+        <button data-lib="lumin" class="on">Lumin</button>
     </div>
     <button class="icon-btn" id="gear" title="Settings" aria-label="Settings">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
@@ -229,7 +226,8 @@
         <div class="field">
             <div class="lab">Game library</div>
             <div class="opts" id="setLib">
-                <div class="opt on" data-lib="gnmath">gnmath<br><span style="font-size:11px;color:var(--fg-3)">game library</span></div>
+                <div class="opt on" data-lib="gnmath">gnmath<br><span style="font-size:11px;color:var(--fg-3)">more known library</span></div>
+                <div class="opt" data-lib="lumin">Lumin<br><span style="font-size:11px;color:var(--fg-3)">bigger game libary</span></div>
             </div>
         </div>
 
@@ -281,7 +279,7 @@ var CFG={
 function resolve(u){ return String(u||"").replace("{COVER_URL}",CFG.covers).replace("{HTML_URL}",CFG.html); }
 function resolveFb(u){ return String(u||"").replace("{COVER_URL}",CFG.coversFallback).replace("{HTML_URL}",CFG.htmlFallback); }
 
-var S={ games:[], library:LS.get("sf-lib")||"gnmath", luminReady:false, cat:"all", current:null };
+var S={ games:[], library:LS.get("sf-lib")||"lumin", luminReady:false, cat:"all", current:null };
 
 var $=function(id){return document.getElementById(id);};
 var grid=$("grid"), chipsEl=$("chips"), searchEl=$("search"),
@@ -483,7 +481,7 @@ window.viewerNewTab=function(){
 
 var SWATCH=["#b8b0da","#8fd0ff","#ff9ecf","#9affc4","#ffd98a","#c9a0ff"];
 function prefs(){
-    return { lib:LS.get("sf-lib")||"gnmath", accent:LS.get("sf-accent")||"#b8b0da",
+    return { lib:LS.get("sf-lib")||"lumin", accent:LS.get("sf-accent")||"#b8b0da",
              cloak:LS.get("sf-cloak")==="1", fx:LS.get("sf-fx")!=="0" };
 }
 function applyAccent(hex){ document.documentElement.style.setProperty("--accent",hex);
@@ -545,7 +543,6 @@ document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer
 
 (function boot(){
     var p=prefs();
-    if(p.lib==="lumin"){ p.lib="gnmath"; try{localStorage.setItem("sf-lib","gnmath");}catch(e){} }
     applyAccent(p.accent); applyFx(p.fx);
     loadLibrary(p.lib);
     if(LS.get("sf-onboarded")!=="1") openSettings(true);

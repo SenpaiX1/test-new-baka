@@ -5,11 +5,9 @@ function App() {
 
   const removed = [
     "Google Analytics (gtag) inline script",
-    "Lumin monetization SDK <script>",
     "effectivecpmnetwork.com ad <script>",
     "CPM ad self-reinjection setInterval",
     "Google Fonts external stylesheet + preconnects",
-    "Lumin library option (header + settings)",
   ];
 
   return (
@@ -66,7 +64,7 @@ function App() {
         </div>
 
         <div className="foot mono">
-          32 KB · 557 lines · SHA-256 5c2f5dd5acf1f2f21dfb38346cfdfb632da3a38bf6d380849957d40a4aa9baf6
+          31.2 KB · 554 lines · SHA-256 4b603098ea7e853c2f6c7026ad6032cfd37b3d692799f7f5f1e52c6d06d91367
         </div>
       </div>
     </div>

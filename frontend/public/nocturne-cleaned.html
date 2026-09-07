@@ -186,6 +186,7 @@
     <div class="seg" id="libSeg">
         <button data-lib="gnmath">gnmath</button>
         <button data-lib="lumin" class="on">Lumin</button>
+        <button data-lib="sussy">sussybakabois</button>
     </div>
     <button class="icon-btn" id="gear" title="Settings" aria-label="Settings">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
@@ -228,6 +229,7 @@
             <div class="opts" id="setLib">
                 <div class="opt on" data-lib="gnmath">gnmath<br><span style="font-size:11px;color:var(--fg-3)">more known library</span></div>
                 <div class="opt" data-lib="lumin">Lumin<br><span style="font-size:11px;color:var(--fg-3)">bigger game libary</span></div>
+                <div class="opt" data-lib="sussy">sussybakabois<br><span style="font-size:11px;color:var(--fg-3)">local library, works offline</span></div>
             </div>
         </div>
 
@@ -259,6 +261,7 @@
 </div>
 
 <script>
+/* SUSSYBAKABOIS_LIB_INJECTED */
 (function(){
 "use strict";
 
@@ -331,15 +334,25 @@ async function loadLumin(){
     return all.map(function(g){ return {id:g.id,name:g.name,image_token:g.image_token,special:g.category?[g.category]:[],_lumin:true}; });
 }
 
+async function loadSussy(){
+    var r=await fetch("sussybakabois/catalog.json?t="+Date.now());
+    if(!r.ok) throw new Error("sussybakabois catalog not found");
+    var games=await r.json();
+    return games.map(function(g){ return {
+        id:g.id, name:g.name, cover:g.cover, url:g.url,
+        special:["sussybakabois"], _sussy:true
+    }; });
+}
+
 async function loadLibrary(lib,persist){
     if(persist===undefined) persist=true;
     if(lib==="lumin" && S.luminReady && S.library==="lumin" && S.games.length){ return; }
     S.library=lib; if(persist) LS.set("sf-lib",lib); S.cat="all";
     document.querySelectorAll("#libSeg button").forEach(function(b){ b.classList.toggle("on",b.dataset.lib===lib); });
-    grid.innerHTML='<div class="status"><div class="spinner"></div>Loading the '+(lib==="lumin"?"Lumin":"gnmath")+' library…</div>';
+    grid.innerHTML='<div class="status"><div class="spinner"></div>Loading the '+(lib==="lumin"?"Lumin":(lib==="sussy"?"sussybakabois":"gnmath"))+' library…</div>';
     $("featWrap").style.display="none"; chipsEl.innerHTML="";
     try{
-        S.games = lib==="lumin" ? await loadLumin() : await loadGnmath();
+        S.games = lib==="lumin" ? await loadLumin() : (lib==="sussy" ? await loadSussy() : await loadGnmath());
     }catch(e){
         if(lib==="lumin"){ toast("Lumin didn't connect — using gnmath."); return loadLibrary("gnmath",false); }
         grid.innerHTML='<div class="status">'+(e.message||"Failed to load games.")+'<br><br>Check your connection and refresh.</div>';
@@ -351,7 +364,7 @@ async function loadLibrary(lib,persist){
     searchEl.value="";
 }
 
-function coverOf(g){ return g._lumin ? "" : resolve(g.cover); }
+function coverOf(g){ return g._lumin ? "" : (g._sussy ? (g.cover||"") : resolve(g.cover)); }
 
 function card(g){
     var favd = isFav(g.id) ? " on" : "";
@@ -374,7 +387,7 @@ function render(list){
 function renderFeatured(){
     var feats=S.games.filter(function(g){return g.featured;}).slice(0,1)
         .concat(S.games.slice(0,10)).filter(function(v,i,a){return a.indexOf(v)===i;}).slice(0,10);
-    if(feats.length<4 || S.library==="lumin"){ $("featWrap").style.display="none"; return; }
+    if(feats.length<4 || S.library==="lumin" || S.library==="sussy"){ $("featWrap").style.display="none"; return; }
     var el=$("featured");
     el.innerHTML=feats.map(function(g){
         return '<div class="feat-card" data-id="'+esc(String(g.id))+'" data-cover="'+esc(coverOf(g))+'" data-fb="'+esc(resolveFb(g.cover))+'">'+
@@ -410,7 +423,7 @@ function buildChips(){
         ch.addEventListener("click",function(){
             chipsEl.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on");});
             ch.classList.add("on"); S.cat=ch.dataset.cat;
-            $("featWrap").style.display = (S.cat==="all"&&S.library!=="lumin") ? "block":"none";
+            $("featWrap").style.display = (S.cat==="all"&&S.library!=="lumin"&&S.library!=="sussy") ? "block":"none";
             render(S.cat==="all" ? S.games : S.games.filter(function(g){ return (g.special||g.tags||[]).indexOf(S.cat)>=0; }));
         });
     });
@@ -451,6 +464,15 @@ async function openGame(id){
         }catch(e){ alert("Load failed: "+(e.message||e)); closeViewer(); }
         return;
     }
+    if(g._sussy){
+        try{
+            vFrame.removeAttribute("sandbox");
+            vFrame.src=g.url;
+            S.current={type:"sussy",url:g.url};
+        }catch(e){ alert("Load failed: "+(e.message||e)); closeViewer(); }
+        if(prefs().cloak){ viewerNewTab(); }
+        return;
+    }
     if(g.url && g.url.indexOf("http")===0 && g.url.indexOf("{")<0){ window.open(g.url,"_blank"); closeViewer(); return; }
     try{
         var primary=resolve(g.url), fb=resolveFb(g.url), h="";
@@ -473,7 +495,7 @@ window.viewerNewTab=function(){
     try{
         w.document.title="Nocturne";
         var body='<style>html,body{margin:0;height:100%;background:#05060d;overflow:hidden}iframe{position:fixed;inset:0;width:100%;height:100%;border:0}</style>';
-        if(S.current&&S.current.type==="lumin"){ body+='<iframe src="'+S.current.url+'" allow="autoplay;fullscreen;pointer-lock;gamepad"></iframe>'; w.document.write(body); }
+        if(S.current&&(S.current.type==="lumin"||S.current.type==="sussy")){ body+='<iframe src="'+S.current.url+'" allow="autoplay;fullscreen;pointer-lock;gamepad"></iframe>'; w.document.write(body); }
         else if(S.current&&S.current.html){ w.document.write(S.current.html); }
         w.document.close();
     }catch(e){}

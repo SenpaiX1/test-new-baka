@@ -1,6 +1,10 @@
 """
-Extract sussybakabois catalog from games/index.html and copy game HTMLs + icons
-into /app/frontend/public/sussybakabois/. Emit a JSON catalog for the launcher.
+Build the sussybakabois catalog by walking games/index.html for every card,
+resolving each gameSite/X.html wrapper -> its ../gamesf/Y.html target via the
+wrapper's iframe, and emitting a catalog whose URLs point DIRECTLY at gamesf/
+(skipping the wrapper page entirely).
+
+Also picks up any gamesf/*.html files that have no card in the index.
 """
 import json
 import re
@@ -8,90 +12,121 @@ import shutil
 from pathlib import Path
 
 SRC = Path("/app/work/sussy/HTML-CSS-JS-Static-1/games")
-OUT_DIR = Path("/app/frontend/public/sussybakabois")
-OUT_DIR.mkdir(parents=True, exist_ok=True)
-(OUT_DIR / "gameSite").mkdir(exist_ok=True)
-(OUT_DIR / "icons").mkdir(exist_ok=True)
+OUT = Path("/app/frontend/public/sussybakabois")
+(OUT / "gamesf").mkdir(parents=True, exist_ok=True)
+(OUT / "icons").mkdir(parents=True, exist_ok=True)
 
 index_html = (SRC / "index.html").read_text(encoding="utf-8", errors="ignore")
+have_gamesf = {p.name for p in (SRC / "gamesf").iterdir() if p.is_file()}
+have_icons = {p.name for p in (SRC / "icons").iterdir() if p.is_file()}
+have_gameSite = {p.name for p in (SRC / "gameSite").iterdir() if p.is_file()}
 
-# Match cards: <h1>[optional inline tag span]NAME</h1> ... <img ... src="icons/FILE" ... > ... <button ... onclick="window.location.href='gameSite/GAME.html'">
-# We do this in two passes: (1) map gameSite href -> best-guess name & icon by walking backwards.
+# ---- 1. Build wrapper -> gamesf mapping by grepping each wrapper's iframe src. ----
+IFRAME_RE = re.compile(r'<iframe[^>]*src="([^"]+)"', re.DOTALL | re.IGNORECASE)
+wrapper_to_gamesf = {}
+for name in have_gameSite:
+    text = (SRC / "gameSite" / name).read_text(encoding="utf-8", errors="ignore")
+    m = IFRAME_RE.search(text)
+    if not m:
+        continue
+    src = m.group(1).strip()
+    # Normalise ../gamesf/foo.html and gamesf/foo.html and /games/gamesf/foo.html
+    m2 = re.search(r"gamesf/([^/'\"]+\.html)", src)
+    if m2 and m2.group(1) in have_gamesf:
+        wrapper_to_gamesf[name] = m2.group(1)
 
-# First, gather all card triples by regex over the raw source.
-card_re = re.compile(
-    r"<h1[^>]*>(?P<name>.*?)</h1>"          # name (may contain span tag)
-    r"(?P<mid>.*?)"                          # anything between
-    r"src=\"icons/(?P<icon>[^\"]+)\""      # icon filename
-    r"(?P<mid2>.*?)"
-    r"onclick=\"window\.location\.href='gameSite/(?P<game>[^']+)'\"",
-    re.DOTALL | re.IGNORECASE,
-)
+print(f"Resolved {len(wrapper_to_gamesf)} wrapper -> gamesf mappings")
 
+# ---- 2. Walk index.html for every unique card and pull (name, icon, wrapper_href). ----
 def clean_name(raw):
-    # Remove inline tag spans like <span class="update-tag">NEW</span> / <span class="online-tag">ONLINE</span>
-    raw = re.sub(r"<span[^>]*(?:update-tag|online-tag|new-tag)[^>]*>.*?</span>", "", raw, flags=re.I | re.S)
-    # Strip any remaining tags
+    raw = re.sub(r"<span[^>]*(?:update-tag|online-tag|new-tag)[^>]*>.*?</span>",
+                 "", raw, flags=re.I | re.S)
     raw = re.sub(r"<[^>]+>", "", raw)
-    # Collapse whitespace, decode a couple of common entities
     raw = raw.replace("&amp;", "&").replace("&#39;", "'").replace("&nbsp;", " ")
     raw = re.sub(r"\s+", " ", raw).strip()
-    # Title-case if the source screamed
     if raw.isupper():
         raw = raw.title().replace("'S", "'s")
     return raw
 
 def title_from_filename(fn):
     stem = Path(fn).stem
-    # Strip common noise prefixes and split camelCase / snake
     stem = re.sub(r"^(cl|gs)", "", stem)
     parts = re.findall(r"[A-Z]?[a-z]+|[A-Z]+(?=[A-Z]|$)|\d+", stem) or [stem]
-    return " ".join(w.capitalize() for w in parts)
+    return " ".join(w.capitalize() for w in parts) or stem
 
-# Available files on disk (source of truth)
-have_games = {p.name for p in (SRC / "gameSite").iterdir() if p.is_file()}
-have_icons = {p.name for p in (SRC / "icons").iterdir() if p.is_file()}
+CARD_RE = re.compile(
+    r"<h1[^>]*>(?P<name>.*?)</h1>"
+    r"(?P<mid>.*?)"
+    r"src=\"icons/(?P<icon>[^\"]+)\""
+    r"(?P<mid2>.*?)"
+    r"onclick=\"window\.location\.href='gameSite/(?P<game>[^']+)'\"",
+    re.DOTALL | re.IGNORECASE,
+)
 
-# Build a dict game_filename -> (name, icon), keeping the first occurrence (usually the "New Games" section)
+# Also pick up cards that link directly to gamesf/ instead of gameSite/
+CARD_RE_GAMESF = re.compile(
+    r"<h1[^>]*>(?P<name>.*?)</h1>"
+    r"(?P<mid>.*?)"
+    r"src=\"icons/(?P<icon>[^\"]+)\""
+    r"(?P<mid2>.*?)"
+    r"onclick=\"window\.location\.href='gamesf/(?P<game>[^']+)'\"",
+    re.DOTALL | re.IGNORECASE,
+)
+
+# id -> {name, icon, gamesf_file}
 catalog = {}
-for m in card_re.finditer(index_html):
-    game_file = m.group("game")
-    if game_file not in have_games:
-        continue
-    if game_file in catalog:
-        continue
-    name = clean_name(m.group("name"))
-    icon = m.group("icon")
-    if not name:
-        name = title_from_filename(game_file)
-    if icon not in have_icons:
+
+def add(gamesf_file, name, icon):
+    if gamesf_file not in have_gamesf:
+        return
+    if gamesf_file in catalog:
+        return
+    if icon and icon not in have_icons:
         icon = None
-    catalog[game_file] = {"name": name, "icon": icon}
+    catalog[gamesf_file] = {"name": name or title_from_filename(gamesf_file), "icon": icon}
 
-# Also add any game files that had no card in the index (fall back to title-cased filename)
-for gf in have_games:
-    if gf not in catalog:
-        catalog[gf] = {"name": title_from_filename(gf), "icon": None}
+for m in CARD_RE.finditer(index_html):
+    wrapper = m.group("game")
+    gamesf_file = wrapper_to_gamesf.get(wrapper)
+    if not gamesf_file:
+        continue
+    add(gamesf_file, clean_name(m.group("name")), m.group("icon"))
 
-# Copy all game HTMLs + icons across.
-for gf in have_games:
-    shutil.copy2(SRC / "gameSite" / gf, OUT_DIR / "gameSite" / gf)
+for m in CARD_RE_GAMESF.finditer(index_html):
+    add(m.group("game"), clean_name(m.group("name")), m.group("icon"))
+
+# Any gamesf file that has no matching card yet — include with a derived name.
+covered = set(catalog.keys())
+for gf in have_gamesf:
+    if gf not in covered:
+        add(gf, title_from_filename(gf), None)
+
+print(f"Total catalog entries: {len(catalog)}  (from {len(have_gamesf)} gamesf files)")
+
+# ---- 3. Copy assets. ----
+for gf in have_gamesf:
+    shutil.copy2(SRC / "gamesf" / gf, OUT / "gamesf" / gf)
 for icon in have_icons:
-    shutil.copy2(SRC / "icons" / icon, OUT_DIR / "icons" / icon)
+    shutil.copy2(SRC / "icons" / icon, OUT / "icons" / icon)
 
-# Build a stable JSON list, sorted by name.
+# Drop the old gameSite copies — we're not using wrappers anymore.
+old_gs = OUT / "gameSite"
+if old_gs.exists():
+    shutil.rmtree(old_gs)
+    print("Removed obsolete /gameSite/ directory")
+
+# ---- 4. Write catalog.json sorted by name. ----
 games_list = []
-for game_file, meta in sorted(catalog.items(), key=lambda kv: kv[1]["name"].lower()):
+for gamesf_file, meta in sorted(catalog.items(), key=lambda kv: kv[1]["name"].lower()):
     games_list.append({
-        "id": Path(game_file).stem,
+        "id": Path(gamesf_file).stem,
         "name": meta["name"],
         "cover": f"sussybakabois/icons/{meta['icon']}" if meta["icon"] else "",
-        "url": f"sussybakabois/gameSite/{game_file}",
+        "url": f"sussybakabois/gamesf/{gamesf_file}",
     })
 
-(OUT_DIR / "catalog.json").write_text(json.dumps(games_list, indent=2), encoding="utf-8")
+(OUT / "catalog.json").write_text(json.dumps(games_list, indent=2), encoding="utf-8")
 print(f"Wrote {len(games_list)} games to catalog.json")
-print(f"Copied {len(have_games)} game HTMLs + {len(have_icons)} icons")
-print("\nSample entries:")
-for g in games_list[:6]:
-    print(f"  - {g['name']}  ->  {g['url']}  (cover: {g['cover'] or '(none)'})")
+print("Sample:")
+for g in games_list[:8]:
+    print(f"  - {g['name']}  ->  {g['url']}  cover={g['cover'] or '(none)'}")

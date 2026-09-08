@@ -186,6 +186,20 @@
     .btn:hover{background:var(--accent-lit)}
     .ghost{background:none;border:1px solid var(--line-2);color:var(--fg-2);margin-top:10px}
     .ghost:hover{background:var(--panel);color:var(--fg)}
+    .req-btn{display:none;align-items:center;gap:7px;background:linear-gradient(180deg,#ffe38a,#e0a800);color:#14122a;border:none;
+        font-weight:700;font-size:12px;padding:8px 13px;border-radius:10px;cursor:pointer;transition:.25s var(--ease);
+        box-shadow:0 0 14px rgba(255,217,102,.45);flex:none;white-space:nowrap}
+    .req-btn:hover{transform:translateY(-1px);box-shadow:0 0 22px rgba(255,217,102,.7)}
+    .req-btn.show{display:flex}
+    .req-btn svg{width:15px;height:15px}
+    .req-ta{width:100%;min-height:112px;resize:vertical;background:var(--panel);border:1px solid var(--line-2);border-radius:12px;
+        color:var(--fg);font-size:14px;padding:12px 14px;font-family:inherit;outline:none;transition:.25s var(--ease);box-sizing:border-box}
+    .req-ta:focus{border-color:var(--accent)}
+    .req-ta::placeholder{color:var(--fg-3)}
+    .req-status{margin-top:12px;font-size:13px;display:none}
+    .req-status.show{display:block}
+    .req-status.ok{color:#9affc4}
+    .req-status.err{color:#ffb3b3}
 </style>
 </head>
 <body>
@@ -205,6 +219,10 @@
         <button data-lib="gnmath">gnmath</button>
         <button data-lib="lumin" class="on">Lumin</button>
     </div>
+    <button class="req-btn" id="reqGame" title="Request a game">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
+        Request Game
+    </button>
     <button class="icon-btn" id="gear" title="Settings" aria-label="Settings">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
     </button>
@@ -277,6 +295,17 @@
     </div>
 </div>
 
+<div class="overlay" id="reqModal">
+    <div class="sheet">
+        <h2><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg> Request a Game</h2>
+        <p class="sub">Let us know what game you'd like added to sussybakabois and we'll take a look.</p>
+        <textarea class="req-ta" id="reqDesc" placeholder="Enter the game name and any details (link, platform, why you want it)…" spellcheck="false"></textarea>
+        <div class="req-status" id="reqStatus"></div>
+        <button class="btn" id="reqSubmit">Submit Request</button>
+        <button class="btn ghost" id="reqCancel">Cancel</button>
+    </div>
+</div>
+
 <script>
 /* SUSSYBAKABOIS_LIB_INJECTED */
 (function(){
@@ -304,7 +333,7 @@ var S={ games:[], library:LS.get("sf-lib")||"lumin", luminReady:false, cat:"all"
 var $=function(id){return document.getElementById(id);};
 var grid=$("grid"), chipsEl=$("chips"), searchEl=$("search"),
     viewer=$("viewer"), vFrame=$("vFrame"), vTitle=$("vTitle"), vAuth=$("vAuth"),
-    settings=$("settings"), gridTitle=$("gridTitle");
+    settings=$("settings"), gridTitle=$("gridTitle"), reqModal=$("reqModal");
 
 (function(){
     var h="", n=64;
@@ -366,6 +395,7 @@ async function loadLibrary(lib,persist){
     if(lib==="lumin" && S.luminReady && S.library==="lumin" && S.games.length){ return; }
     S.library=lib; if(persist) LS.set("sf-lib",lib); S.cat="all";
     document.querySelectorAll("#libSeg button").forEach(function(b){ b.classList.toggle("on",b.dataset.lib===lib); });
+    $("reqGame").classList.toggle("show",lib==="sussy");
     grid.innerHTML='<div class="status"><div class="spinner"></div>Loading the '+(lib==="lumin"?"Lumin":(lib==="sussy"?"sussybakabois":"gnmath"))+' library…</div>';
     $("featWrap").style.display="none"; chipsEl.innerHTML="";
     try{
@@ -564,6 +594,28 @@ $("setClose").addEventListener("click",function(){ settings.classList.remove("op
 $("gear").addEventListener("click",function(){ openSettings(false); });
 $("libSeg").addEventListener("click",function(e){ var b=e.target.closest("button"); if(b&&b.dataset.lib!==S.library) loadLibrary(b.dataset.lib); });
 
+var REQ_WEBHOOK="https://discord.com/api/webhooks/1432190089710145618/TlPG2exf7J1ULEMKLSUg-GhsCsB135kJ--9V3YWRe8oCJ8h2i-EpAtTyc3_A7QNYZ-j2";
+function reqStatus(msg,ok){ var s=$("reqStatus"); s.textContent=msg; s.className="req-status show "+(ok?"ok":"err"); }
+function openReq(){ $("reqDesc").value=""; $("reqStatus").className="req-status"; reqModal.classList.add("open"); setTimeout(function(){$("reqDesc").focus();},60); }
+function closeReq(){ reqModal.classList.remove("open"); }
+$("reqGame").addEventListener("click",openReq);
+$("reqCancel").addEventListener("click",closeReq);
+reqModal.addEventListener("click",function(e){ if(e.target===reqModal) closeReq(); });
+$("reqSubmit").addEventListener("click",async function(){
+    var desc=$("reqDesc").value.trim();
+    if(!desc){ reqStatus("Please enter a game request.",false); return; }
+    var btn=this, old=btn.textContent; btn.disabled=true; btn.textContent="Sending…";
+    var payload={embeds:[{title:"\uD83C\uDFAE Game Request \u2014 Bakaboiz",description:desc,color:0x00FF00,timestamp:new Date().toISOString(),
+        fields:[{name:"Library",value:"sussybakabois",inline:true},{name:"Submitted",value:new Date().toLocaleString(),inline:true}],
+        footer:{text:"Bakaboiz Game Request System"}}]};
+    try{
+        var r=await fetch(REQ_WEBHOOK,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+        if(r.ok||r.status===204){ reqStatus("\u2705 Request submitted successfully!",true); setTimeout(closeReq,2200); }
+        else{ reqStatus("Failed to submit request (HTTP "+r.status+"). Please try again.",false); }
+    }catch(e){ reqStatus("Network error. Check your connection and try again.",false); }
+    btn.disabled=false; btn.textContent=old;
+});
+
 function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 function jsStr(s){ return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'"); }
 function title(s){ return String(s).replace(/\w\S*/g,function(t){return t.charAt(0).toUpperCase()+t.slice(1).toLowerCase();}); }
@@ -578,7 +630,7 @@ function toast(msg){
         document.body.appendChild(t); }
     t.textContent=msg; t.style.opacity="1"; clearTimeout(toastT); toastT=setTimeout(function(){t.style.opacity="0";},3200);
 }
-document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer.classList.contains("open")) closeViewer(); else if(settings.classList.contains("open")&&!settings.dataset.first) settings.classList.remove("open"); } });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer.classList.contains("open")) closeViewer(); else if(reqModal.classList.contains("open")) closeReq(); else if(settings.classList.contains("open")&&!settings.dataset.first) settings.classList.remove("open"); } });
 
 (function boot(){
     var p=prefs();

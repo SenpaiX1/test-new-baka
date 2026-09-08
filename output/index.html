@@ -213,6 +213,16 @@
     .score-drop.has{border-style:solid;border-color:var(--accent);color:var(--fg)}
     .score-drop svg{width:22px;height:22px;display:block;margin:0 auto 8px;opacity:.8}
     .score-thumb{max-width:100%;max-height:120px;border-radius:10px;margin:10px auto 0;display:none}
+    .lb-list{list-style:none;margin:6px 0 0;padding:0;max-height:44vh;overflow-y:auto}
+    .lb-list li{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;
+        background:var(--panel);border:1px solid var(--line);margin-bottom:8px;font-size:14px}
+    .lb-list li .rank{width:26px;height:26px;flex:none;display:grid;place-items:center;border-radius:8px;font-weight:700;font-size:13px;
+        background:var(--bg-3);color:var(--fg-2)}
+    .lb-list li:nth-child(1) .rank{background:linear-gradient(180deg,#ffe08a,#e0a800);color:#14122a}
+    .lb-list li:nth-child(2) .rank{background:linear-gradient(180deg,#e6e6ee,#b9b9c9);color:#14122a}
+    .lb-list li:nth-child(3) .rank{background:linear-gradient(180deg,#e6b98a,#c88a52);color:#14122a}
+    .lb-list li .lb-name{flex:1;font-weight:500}
+    .lb-list li .lb-score{color:var(--accent-lit);font-weight:700;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -264,6 +274,7 @@
         <span class="v-title" id="vTitle">Game</span>
         <span class="v-auth" id="vAuth"></span>
         <span class="v-sp"></span>
+        <button id="lbBtn" onclick="openLeaderboard()" style="display:none" data-testid="leaderboard-btn">Leaderboard</button>
         <button onclick="openScore()" data-testid="submit-score-btn">Submit Score</button>
         <button onclick="viewerFullscreen()">Fullscreen</button>
         <button onclick="viewerNewTab()">New tab</button>
@@ -352,6 +363,16 @@
     </div>
 </div>
 
+<div class="overlay" id="lbModal">
+    <div class="sheet">
+        <h2><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg> Top 8 Scores</h2>
+        <p class="sub"><b id="lbTitle">Leaderboard</b> — the current high scores. Think you can beat them?</p>
+        <ol class="lb-list" id="lbList" data-testid="leaderboard-list"></ol>
+        <button class="btn" id="lbSubmit" data-testid="leaderboard-submit-score">Submit Your Score</button>
+        <button class="btn ghost" id="lbClose" data-testid="leaderboard-close">Close</button>
+    </div>
+</div>
+
 <script>
 /* SUSSYBAKABOIS_LIB_INJECTED */
 (function(){
@@ -379,7 +400,7 @@ var S={ games:[], library:LS.get("sf-lib")||"lumin", luminReady:false, cat:"all"
 var $=function(id){return document.getElementById(id);};
 var grid=$("grid"), chipsEl=$("chips"), searchEl=$("search"),
     viewer=$("viewer"), vFrame=$("vFrame"), vTitle=$("vTitle"), vAuth=$("vAuth"),
-    settings=$("settings"), gridTitle=$("gridTitle"), reqModal=$("reqModal"), reportModal=$("reportModal"), scoreModal=$("scoreModal");
+    settings=$("settings"), gridTitle=$("gridTitle"), reqModal=$("reqModal"), reportModal=$("reportModal"), scoreModal=$("scoreModal"), lbModal=$("lbModal");
 
 (function(){
     var h="", n=64;
@@ -545,6 +566,8 @@ async function openGame(id){
     if(!g) return;
     vTitle.textContent=g.name||"Game";
     vAuth.textContent=g._lumin ? "via Lumin" : (g.author?("by "+g.author):"");
+    S.leaderboard=findLeaderboard(g.name);
+    $("lbBtn").style.display=S.leaderboard?"":"none";
     vFrame.removeAttribute("srcdoc"); vFrame.removeAttribute("src");
     viewer.classList.add("open");
 
@@ -740,6 +763,44 @@ $("scoreSubmit").addEventListener("click",async function(){
 });
 
 
+var LEADERBOARDS=[
+    {kw:["jetpack"],title:"JetPack",scores:[["TyC","8650m"],["JackB","5969m"],["Hasty","5411"],["Cade","5054"],["Ty","4937m"],["LucasB","3622"],["Vann","2468m"]]},
+    {kw:["slope"],title:"Slope",scores:[["Miron","537"],["Zeb","438"],["CollinK","167"],["Sebastian","130"],["GiovaniM","127"],["IsaacL","126"],["LukeB","121"],["JaydenM","111"]]},
+    {kw:["snow rider","snowrider"],title:"SnowRider",scores:[["FinnB","266"],["Cade","192"],["IsaacL","165"],["MalMal","158"],["Liam","153"],["CollinK","145"],["Jmoney","135"],["JacksonB","132"]]},
+    {kw:["temple run","temple"],title:"Temple Run",scores:[["Sebastian","85,838"],["CollinK","79,380"],["Zeb","49,681"],["Liam","1,862"]]},
+    {kw:["subway"],title:"Subway",scores:[["CollinK","39443"],["Ty","28,312"],["Nolan","22584"],["Alden","5281"],["Khun","150"]]},
+    {kw:["flappy"],title:"Flappy Bird",scores:[["Nolan","404"],["Isaac L","210"],["Isaacc","199"],["CollinK","188"],["kolbsters","173"],["Hasty","164"],["BrooksR","118"],["Parker","75"]]},
+    {kw:["crossy"],title:"Crossy",scores:[["CollinK","527"],["IsaacL","355"],["isaacc","299"],["Alden","244"],["Nolan","225"],["IsaacH","220"],["Esau","174"],["kolbsters","161"]]},
+    {kw:["snake"],title:"Snake",scores:[["Alden","252"],["Dylan","252"],["Zeb","190"],["LucasB","56"],["Angel","55"],["BrooksR","51"],["Liam","42"],["Ashon","28"]]},
+    {kw:["tetris"],title:"Tetris",scores:[["Keith","89,085"],["Nolan","28,980"],["Khun","20"]]},
+    {kw:["baseball"],title:"Baseball",scores:[["CollinK","83"],["Hasty","57"],["AdamS","44"],["Liam","30"],["Rpelly","39"],["LucasC","28"],["Khun","20"],["Pierce","14"]]},
+    {kw:["neon blast","neon"],title:"Neon Blast",scores:[["Khun","10"]]},
+    {kw:["stack"],title:"Stack",scores:[["Penelope","86"],["TyC","70"],["Keith","63"],["Hannah","44"],["ReedM","41"],["Khun","10"]]},
+    {kw:["dune"],title:"Dune",scores:[["TyC","88"],["Penelope","35"],["Khun","10"]]},
+    {kw:["hover racer","hover"],title:"Hover Racer",scores:[["Khun","1067m"]]}
+];
+function findLeaderboard(name){
+    var n=String(name||"").toLowerCase();
+    for(var i=0;i<LEADERBOARDS.length;i++){
+        var kws=LEADERBOARDS[i].kw;
+        for(var j=0;j<kws.length;j++){ if(n.indexOf(kws[j])>=0) return LEADERBOARDS[i]; }
+    }
+    return null;
+}
+window.openLeaderboard=function(){
+    var lb=S.leaderboard; if(!lb) return;
+    $("lbTitle").textContent=lb.title;
+    $("lbList").innerHTML=lb.scores.map(function(s,i){
+        return '<li><span class="rank">'+(i+1)+'</span><span class="lb-name">'+esc(s[0])+'</span><span class="lb-score">'+esc(s[1])+'</span></li>';
+    }).join("") || '<li class="lb-empty">No scores yet — be the first!</li>';
+    lbModal.classList.add("open");
+};
+function closeLeaderboard(){ lbModal.classList.remove("open"); }
+$("lbClose").addEventListener("click",closeLeaderboard);
+$("lbSubmit").addEventListener("click",function(){ closeLeaderboard(); window.openScore(); });
+lbModal.addEventListener("click",function(e){ if(e.target===lbModal) closeLeaderboard(); });
+
+
 function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 function jsStr(s){ return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'"); }
 function title(s){ return String(s).replace(/\w\S*/g,function(t){return t.charAt(0).toUpperCase()+t.slice(1).toLowerCase();}); }
@@ -754,7 +815,7 @@ function toast(msg){
         document.body.appendChild(t); }
     t.textContent=msg; t.style.opacity="1"; clearTimeout(toastT); toastT=setTimeout(function(){t.style.opacity="0";},3200);
 }
-document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer.classList.contains("open")&&!scoreModal.classList.contains("open")) closeViewer(); else if(reqModal.classList.contains("open")) closeReq(); else if(reportModal.classList.contains("open")) closeReport(); else if(scoreModal.classList.contains("open")) closeScore(); else if(settings.classList.contains("open")&&!settings.dataset.first) settings.classList.remove("open"); } });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(lbModal.classList.contains("open")) closeLeaderboard(); else if(scoreModal.classList.contains("open")) closeScore(); else if(reqModal.classList.contains("open")) closeReq(); else if(reportModal.classList.contains("open")) closeReport(); else if(viewer.classList.contains("open")) closeViewer(); else if(settings.classList.contains("open")&&!settings.dataset.first) settings.classList.remove("open"); } });
 
 (function boot(){
     var p=prefs();

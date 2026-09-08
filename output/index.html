@@ -203,6 +203,16 @@
     .req-status.show{display:block}
     .req-status.ok{color:#9affc4}
     .req-status.err{color:#ffb3b3}
+    .score-input{width:100%;background:var(--panel);border:1px solid var(--line-2);border-radius:12px;color:var(--fg);
+        font-size:14px;padding:12px 14px;font-family:inherit;outline:none;transition:.25s var(--ease);box-sizing:border-box;margin-bottom:12px}
+    .score-input:focus{border-color:var(--accent)}
+    .score-input::placeholder{color:var(--fg-3)}
+    .score-drop{width:100%;border:1.5px dashed var(--line-2);border-radius:12px;padding:20px 14px;text-align:center;cursor:pointer;
+        color:var(--fg-3);font-size:13px;transition:.25s var(--ease);box-sizing:border-box}
+    .score-drop:hover{border-color:var(--accent);color:var(--fg-2);background:rgba(184,176,218,.06)}
+    .score-drop.has{border-style:solid;border-color:var(--accent);color:var(--fg)}
+    .score-drop svg{width:22px;height:22px;display:block;margin:0 auto 8px;opacity:.8}
+    .score-thumb{max-width:100%;max-height:120px;border-radius:10px;margin:10px auto 0;display:none}
 </style>
 </head>
 <body>
@@ -254,6 +264,7 @@
         <span class="v-title" id="vTitle">Game</span>
         <span class="v-auth" id="vAuth"></span>
         <span class="v-sp"></span>
+        <button onclick="openScore()" data-testid="submit-score-btn">Submit Score</button>
         <button onclick="viewerFullscreen()">Fullscreen</button>
         <button onclick="viewerNewTab()">New tab</button>
         <button class="close" onclick="closeViewer()">Close</button>
@@ -324,6 +335,23 @@
     </div>
 </div>
 
+<div class="overlay" id="scoreModal">
+    <div class="sheet">
+        <h2><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg> Submit Your Score</h2>
+        <p class="sub">Submitting a score for <b id="scoreGameName">this game</b>. Enter your name and upload a screenshot proving your score.</p>
+        <input type="text" class="score-input" id="scoreName" placeholder="Your name" maxlength="24" spellcheck="false" data-testid="submit-score-name">
+        <div class="score-drop" id="scoreDrop" data-testid="submit-score-drop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span id="scoreDropText">Upload a screenshot of your score</span>
+            <img class="score-thumb" id="scoreThumb" alt="">
+        </div>
+        <input type="file" id="scoreFile" accept="image/*" style="display:none" data-testid="submit-score-file">
+        <div class="req-status" id="scoreStatus" data-testid="submit-score-status"></div>
+        <button class="btn" id="scoreSubmit" data-testid="submit-score-submit">Submit Score</button>
+        <button class="btn ghost" id="scoreCancel" data-testid="submit-score-cancel">Cancel</button>
+    </div>
+</div>
+
 <script>
 /* SUSSYBAKABOIS_LIB_INJECTED */
 (function(){
@@ -351,7 +379,7 @@ var S={ games:[], library:LS.get("sf-lib")||"lumin", luminReady:false, cat:"all"
 var $=function(id){return document.getElementById(id);};
 var grid=$("grid"), chipsEl=$("chips"), searchEl=$("search"),
     viewer=$("viewer"), vFrame=$("vFrame"), vTitle=$("vTitle"), vAuth=$("vAuth"),
-    settings=$("settings"), gridTitle=$("gridTitle"), reqModal=$("reqModal"), reportModal=$("reportModal");
+    settings=$("settings"), gridTitle=$("gridTitle"), reqModal=$("reqModal"), reportModal=$("reportModal"), scoreModal=$("scoreModal");
 
 (function(){
     var h="", n=64;
@@ -659,6 +687,59 @@ $("reportSubmit").addEventListener("click",async function(){
     btn.disabled=false; btn.textContent=old;
 });
 
+var SCORE_WEBHOOK="https://discord.com/api/webhooks/1420170958664237146/Rv7yjlUskrkMtGpFYoV-kzGloT8G9-gjGFNtyymL4dInSW0Mn_XW6HhW7cfILLkDuaoK";
+var scoreFileObj=null;
+function scoreStatus(msg,ok){ var s=$("scoreStatus"); s.textContent=msg; s.className="req-status show "+(ok?"ok":"err"); }
+window.openScore=function(){
+    if(!S.current){ return; }
+    $("scoreGameName").textContent=(vTitle.textContent||"this game");
+    $("scoreName").value=""; scoreFileObj=null;
+    $("scoreDropText").textContent="Upload a screenshot of your score";
+    $("scoreDrop").classList.remove("has"); $("scoreThumb").style.display="none"; $("scoreThumb").removeAttribute("src");
+    $("scoreStatus").className="req-status";
+    scoreModal.classList.add("open");
+};
+function closeScore(){ scoreModal.classList.remove("open"); }
+$("scoreCancel").addEventListener("click",closeScore);
+scoreModal.addEventListener("click",function(e){ if(e.target===scoreModal) closeScore(); });
+$("scoreDrop").addEventListener("click",function(){ $("scoreFile").click(); });
+$("scoreFile").addEventListener("change",function(){
+    var f=this.files&&this.files[0]; if(!f) return;
+    scoreFileObj=f;
+    $("scoreDropText").textContent=f.name;
+    $("scoreDrop").classList.add("has");
+    var img=$("scoreThumb"); img.src=URL.createObjectURL(f); img.style.display="block";
+});
+$("scoreDrop").addEventListener("dragover",function(e){ e.preventDefault(); this.classList.add("has"); });
+$("scoreDrop").addEventListener("dragleave",function(){ if(!scoreFileObj) this.classList.remove("has"); });
+$("scoreDrop").addEventListener("drop",function(e){
+    e.preventDefault(); var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];
+    if(f&&f.type.indexOf("image")===0){ $("scoreFile").files=e.dataTransfer.files;
+        $("scoreFile").dispatchEvent(new Event("change")); }
+});
+$("scoreSubmit").addEventListener("click",async function(){
+    var name=$("scoreName").value.trim();
+    if(!name){ scoreStatus("Please enter your name.",false); return; }
+    if(!scoreFileObj){ scoreStatus("Please upload a screenshot of your score.",false); return; }
+    var game=vTitle.textContent||"Unknown game";
+    var btn=this, old=btn.textContent; btn.disabled=true; btn.textContent="Sending…";
+    var payload={username:"Bakaboiz Score Reporter",embeds:[{title:"\uD83C\uDFC6 New Score Submission",
+        description:"**"+name+"** just submitted a score for **"+game+"**!",color:65280,timestamp:new Date().toISOString(),
+        fields:[{name:"Game",value:game,inline:true},{name:"Player",value:name,inline:true},
+                {name:"Submitted",value:new Date().toLocaleString(),inline:false}],
+        footer:{text:"Bakaboiz Score System"}}]};
+    try{
+        var fd=new FormData();
+        fd.append("payload_json",JSON.stringify(payload));
+        fd.append("file",scoreFileObj,scoreFileObj.name);
+        var r=await fetch(SCORE_WEBHOOK,{method:"POST",body:fd});
+        if(r.ok||r.status===204){ scoreStatus("\uD83C\uDFC6 Score submitted \u2014 good luck on the leaderboard!",true); setTimeout(closeScore,2400); }
+        else{ scoreStatus("Failed to submit score (HTTP "+r.status+"). Please try again.",false); }
+    }catch(e){ scoreStatus("Network error. Check your connection and try again.",false); }
+    btn.disabled=false; btn.textContent=old;
+});
+
+
 function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 function jsStr(s){ return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'"); }
 function title(s){ return String(s).replace(/\w\S*/g,function(t){return t.charAt(0).toUpperCase()+t.slice(1).toLowerCase();}); }
@@ -673,7 +754,7 @@ function toast(msg){
         document.body.appendChild(t); }
     t.textContent=msg; t.style.opacity="1"; clearTimeout(toastT); toastT=setTimeout(function(){t.style.opacity="0";},3200);
 }
-document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer.classList.contains("open")) closeViewer(); else if(reqModal.classList.contains("open")) closeReq(); else if(reportModal.classList.contains("open")) closeReport(); else if(settings.classList.contains("open")&&!settings.dataset.first) settings.classList.remove("open"); } });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer.classList.contains("open")&&!scoreModal.classList.contains("open")) closeViewer(); else if(reqModal.classList.contains("open")) closeReq(); else if(reportModal.classList.contains("open")) closeReport(); else if(scoreModal.classList.contains("open")) closeScore(); else if(settings.classList.contains("open")&&!settings.dataset.first) settings.classList.remove("open"); } });
 
 (function boot(){
     var p=prefs();

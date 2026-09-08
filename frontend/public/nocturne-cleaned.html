@@ -84,6 +84,23 @@
     .seg{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:3px;gap:2px}
     .seg button{background:none;border:none;color:var(--fg-2);font-size:12.5px;font-weight:500;padding:7px 13px;border-radius:8px;cursor:pointer;transition:.25s var(--ease)}
     .seg button.on{background:var(--accent);color:#14122a;font-weight:600}
+    .seg button.special{position:relative;color:#14122a;font-weight:700;
+        background:linear-gradient(90deg,#b8b0da,#8f7fe0,#f0b3ff,#8f7fe0,#b8b0da);background-size:250% 100%;
+        animation:sussyShimmer 3.5s linear infinite;box-shadow:0 0 12px rgba(143,127,224,.55);overflow:visible}
+    .seg button.special::before{content:"★";margin-right:5px;color:#fff3b0;text-shadow:0 0 6px rgba(255,220,120,.9)}
+    .seg button.special::after{content:"BEST";position:absolute;top:-8px;right:-6px;font-size:8px;font-weight:800;
+        letter-spacing:.5px;color:#14122a;background:#ffd966;padding:1px 5px;border-radius:20px;
+        box-shadow:0 0 8px rgba(255,217,102,.8);animation:sussyPulse 1.8s ease-in-out infinite}
+    .seg button.special.on{box-shadow:0 0 20px rgba(143,127,224,.9),0 0 34px rgba(240,179,255,.4)}
+    @keyframes sussyShimmer{0%{background-position:0% 0}100%{background-position:250% 0}}
+    @keyframes sussyPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+    .opt.special{position:relative;border-color:#8f7fe0;background:linear-gradient(135deg,rgba(184,176,218,.18),rgba(240,179,255,.12));
+        box-shadow:0 0 16px rgba(143,127,224,.35)}
+    .opt.special .best-tag{display:block;margin-top:3px;font-size:11px;font-weight:600;
+        background:linear-gradient(90deg,#b8b0da,#f0b3ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .opt.special::after{content:"★ BEST";position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:9px;
+        font-weight:800;letter-spacing:.5px;color:#14122a;background:#ffd966;padding:2px 8px;border-radius:20px;
+        box-shadow:0 0 10px rgba(255,217,102,.7)}
     .icon-btn{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:11px;background:var(--panel);
         border:1px solid var(--line);color:var(--fg-2);cursor:pointer;transition:.25s var(--ease)}
     .icon-btn:hover{color:var(--fg);border-color:var(--line-2);transform:translateY(-1px)}
@@ -184,9 +201,9 @@
         <input id="search" type="text" placeholder="Search games…" autocomplete="off" spellcheck="false">
     </div>
     <div class="seg" id="libSeg">
+        <button data-lib="sussy" class="special">sussybakabois</button>
         <button data-lib="gnmath">gnmath</button>
         <button data-lib="lumin" class="on">Lumin</button>
-        <button data-lib="sussy">sussybakabois</button>
     </div>
     <button class="icon-btn" id="gear" title="Settings" aria-label="Settings">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
@@ -227,9 +244,9 @@
         <div class="field">
             <div class="lab">Game library</div>
             <div class="opts" id="setLib">
-                <div class="opt on" data-lib="gnmath">gnmath<br><span style="font-size:11px;color:var(--fg-3)">more known library</span></div>
+                <div class="opt on special" data-lib="sussy">sussybakabois<span class="best-tag">the best choice for students & better games</span></div>
+                <div class="opt" data-lib="gnmath">gnmath<br><span style="font-size:11px;color:var(--fg-3)">more known library</span></div>
                 <div class="opt" data-lib="lumin">Lumin<br><span style="font-size:11px;color:var(--fg-3)">bigger game libary</span></div>
-                <div class="opt" data-lib="sussy">sussybakabois<br><span style="font-size:11px;color:var(--fg-3)">bakaboiz worker library</span></div>
             </div>
         </div>
 

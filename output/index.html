@@ -47,7 +47,9 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font-family:var(--font);-webkit-font-smoothing:antialiased}
+    html,body{margin:0;min-height:100%;color:var(--fg);font-family:var(--font);-webkit-font-smoothing:antialiased}
+    html{background:var(--bg)}
+    body{background:transparent}
     body{overflow-x:hidden}
     ::selection{background:rgba(184,176,218,.3)}
     a{color:inherit;text-decoration:none}
@@ -217,13 +219,16 @@
         <input id="search" type="text" placeholder="Search games…" autocomplete="off" spellcheck="false">
     </div>
     <div class="seg" id="libSeg">
-        <button data-lib="sussy" class="special">sussybakabois</button>
-        <button data-lib="gnmath">gnmath</button>
-        <button data-lib="lumin" class="on">Lumin</button>
+        <button data-lib="sussy" class="special" data-testid="lib-sussy-btn">sussybakabois</button>
+        <button data-lib="gnmath" data-testid="lib-gnmath-btn">gnmath</button>
+        <button data-lib="lumin" class="on" data-testid="lib-lumin-btn">Lumin</button>
     </div>
-    <button class="req-btn" id="reqGame" title="Request a game">
+    <button class="req-btn" id="reqGame" title="Request a game" data-testid="request-game-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
         Request Game
+    </button>
+    <button class="icon-btn" id="reportBtn" title="Report a problem" aria-label="Report a problem" data-testid="report-problem-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
     </button>
     <button class="icon-btn" id="gear" title="Settings" aria-label="Settings">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
@@ -301,10 +306,21 @@
     <div class="sheet">
         <h2><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg> Request a Game</h2>
         <p class="sub">Let us know what game you'd like added to sussybakabois and we'll take a look.</p>
-        <textarea class="req-ta" id="reqDesc" placeholder="Enter the game name and any details (link, platform, why you want it)…" spellcheck="false"></textarea>
-        <div class="req-status" id="reqStatus"></div>
-        <button class="btn" id="reqSubmit">Submit Request</button>
-        <button class="btn ghost" id="reqCancel">Cancel</button>
+        <textarea class="req-ta" id="reqDesc" placeholder="Enter the game name and any details (link, platform, why you want it)…" spellcheck="false" data-testid="request-game-input"></textarea>
+        <div class="req-status" id="reqStatus" data-testid="request-game-status"></div>
+        <button class="btn" id="reqSubmit" data-testid="request-game-submit">Submit Request</button>
+        <button class="btn ghost" id="reqCancel" data-testid="request-game-cancel">Cancel</button>
+    </div>
+</div>
+
+<div class="overlay" id="reportModal">
+    <div class="sheet">
+        <h2><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Report a Problem</h2>
+        <p class="sub">Found a broken game or a bug? Tell us what happened and we'll fix it.</p>
+        <textarea class="req-ta" id="reportDesc" placeholder="Describe the issue (which game, what went wrong)…" spellcheck="false" data-testid="report-problem-input"></textarea>
+        <div class="req-status" id="reportStatus" data-testid="report-problem-status"></div>
+        <button class="btn" id="reportSubmit" data-testid="report-problem-submit">Submit Report</button>
+        <button class="btn ghost" id="reportCancel" data-testid="report-problem-cancel">Cancel</button>
     </div>
 </div>
 
@@ -335,7 +351,7 @@ var S={ games:[], library:LS.get("sf-lib")||"lumin", luminReady:false, cat:"all"
 var $=function(id){return document.getElementById(id);};
 var grid=$("grid"), chipsEl=$("chips"), searchEl=$("search"),
     viewer=$("viewer"), vFrame=$("vFrame"), vTitle=$("vTitle"), vAuth=$("vAuth"),
-    settings=$("settings"), gridTitle=$("gridTitle"), reqModal=$("reqModal");
+    settings=$("settings"), gridTitle=$("gridTitle"), reqModal=$("reqModal"), reportModal=$("reportModal");
 
 (function(){
     var h="", n=64;
@@ -620,6 +636,29 @@ $("reqSubmit").addEventListener("click",async function(){
     btn.disabled=false; btn.textContent=old;
 });
 
+var REPORT_WEBHOOK="https://discord.com/api/webhooks/1420170958664237146/Rv7yjlUskrkMtGpFYoV-kzGloT8G9-gjGFNtyymL4dInSW0Mn_XW6HhW7cfILLkDuaoK";
+function reportStatus(msg,ok){ var s=$("reportStatus"); s.textContent=msg; s.className="req-status show "+(ok?"ok":"err"); }
+function openReport(){ $("reportDesc").value=""; $("reportStatus").className="req-status"; reportModal.classList.add("open"); setTimeout(function(){$("reportDesc").focus();},60); }
+function closeReport(){ reportModal.classList.remove("open"); }
+$("reportBtn").addEventListener("click",openReport);
+$("reportCancel").addEventListener("click",closeReport);
+reportModal.addEventListener("click",function(e){ if(e.target===reportModal) closeReport(); });
+$("reportSubmit").addEventListener("click",async function(){
+    var desc=$("reportDesc").value.trim();
+    if(!desc){ reportStatus("Please describe the problem.",false); return; }
+    var btn=this, old=btn.textContent; btn.disabled=true; btn.textContent="Sending…";
+    var payload={embeds:[{title:"\uD83D\uDC1B Bug Report \u2014 Bakaboiz",description:desc,color:0xFFA500,timestamp:new Date().toISOString(),
+        fields:[{name:"Library",value:S.library||"unknown",inline:true},{name:"Reported",value:new Date().toLocaleString(),inline:true},
+                {name:"User Agent",value:"```"+navigator.userAgent.substring(0,900)+"```",inline:false}],
+        footer:{text:"Bakaboiz Support System"}}]};
+    try{
+        var r=await fetch(REPORT_WEBHOOK,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+        if(r.ok||r.status===204){ reportStatus("\u2705 Report submitted \u2014 thank you!",true); setTimeout(closeReport,2200); }
+        else{ reportStatus("Failed to send report (HTTP "+r.status+"). Please try again.",false); }
+    }catch(e){ reportStatus("Network error. Check your connection and try again.",false); }
+    btn.disabled=false; btn.textContent=old;
+});
+
 function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 function jsStr(s){ return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'"); }
 function title(s){ return String(s).replace(/\w\S*/g,function(t){return t.charAt(0).toUpperCase()+t.slice(1).toLowerCase();}); }
@@ -634,7 +673,7 @@ function toast(msg){
         document.body.appendChild(t); }
     t.textContent=msg; t.style.opacity="1"; clearTimeout(toastT); toastT=setTimeout(function(){t.style.opacity="0";},3200);
 }
-document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer.classList.contains("open")) closeViewer(); else if(reqModal.classList.contains("open")) closeReq(); else if(settings.classList.contains("open")&&!settings.dataset.first) settings.classList.remove("open"); } });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer.classList.contains("open")) closeViewer(); else if(reqModal.classList.contains("open")) closeReq(); else if(reportModal.classList.contains("open")) closeReport(); else if(settings.classList.contains("open")&&!settings.dataset.first) settings.classList.remove("open"); } });
 
 (function boot(){
     var p=prefs();
@@ -719,8 +758,9 @@ document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(viewer
         "  vec2 uv=gl_FragCoord.xy/resolution.xy;\n"+
         "  uv-=0.5; uv.x*=resolution.x/resolution.y;\n"+
         "  float f=pattern(uv);\n"+
-        "  f=clamp(f*1.35,0.0,1.0);\n"+
+        "  f=clamp(f*1.4,0.0,1.0);\n"+
         "  vec3 col=mix(backgroundColor,waveColor,f);\n"+
+        "  col+=pow(f,4.0)*0.5*waveColor;\n"+
         "  col=dither(col);\n"+
         "  fragColor=vec4(col,1.0);\n"+
         "}\n";

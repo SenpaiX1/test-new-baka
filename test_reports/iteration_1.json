@@ -1,0 +1,72 @@
+{
+  "summary": "Frontend-only testing of static Bakaboiz launcher at /nocturne-cleaned.html. Verified all 6 items in the review request: (1) dither background visible & not black, (2) Request Game button visibility scoped to sussy tab, (3) Request Game webhook submit + validation, (4) Report a problem button always visible + webhook submit + validation, (5) empty-submit validation for both modals, (6) Ambient effects Settings toggle disables/enables the dither canvas. Desktop 1920x800 and mobile 390x844 both sanity-checked. All checks PASSED.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "detailed_results": {
+    "dither_background": {
+      "canvas_exists": true,
+      "display": "block",
+      "size": "1920x800",
+      "z_index": "-3",
+      "body_bg": "rgba(0,0,0,0) (transparent - bug fix confirmed)",
+      "html_bg": "rgb(5,6,13)",
+      "webgl2_available": true,
+      "element_at_(100,120)": "BODY (empty gap, canvas shows through)",
+      "avg_brightness_at_(80-160,100-180)": "204/255 (well above 30 threshold - bright purple/lilac dither visible)",
+      "mobile_avg_brightness": "46.5/255 (visible, non-black)",
+      "result": "PASS"
+    },
+    "request_game_visibility": {
+      "on_default_lumin_or_gnmath_fallback": false,
+      "on_sussy": true,
+      "on_gnmath": false,
+      "on_lumin": false,
+      "result": "PASS - scoped correctly to sussy only"
+    },
+    "report_problem_visibility": {
+      "on_lumin": true,
+      "on_mobile": true,
+      "result": "PASS - always visible in header"
+    },
+    "empty_submit_validation": {
+      "report_status_text": "Please describe the problem.",
+      "report_modal_stays_open": true,
+      "request_status_text": "Please enter a game request.",
+      "request_modal_stays_open": true,
+      "result": "PASS"
+    },
+    "webhook_submissions": {
+      "report_submit_status": "✅ Report submitted — thank you!",
+      "request_submit_status": "✅ Request submitted successfully!",
+      "result": "PASS - both webhooks returned success"
+    },
+    "ambient_effects_toggle": {
+      "note": "Toggle takes effect after clicking Save (setSave), not immediately on switch click. This matches source code (window.NFDither.setEnabled invoked on save).",
+      "before": "block",
+      "after_toggle_click": "block (still block until Save)",
+      "after_save": "none",
+      "after_toggle_back_and_save": "block",
+      "result": "PASS"
+    }
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Static single-file HTML (~835 lines) is acceptable size. Body bg transparent + html bg dark is the correct fix for the reported black-cover bug.",
+    "Ambient effects toggle applies only on Save. If instant preview is desired, invoke NFDither.setEnabled(on) inside the #setFx click handler too. Not a bug, but a UX enhancement.",
+    "Discord webhook URLs (REQ_WEBHOOK, REPORT_WEBHOOK) are hardcoded in client-side JS and thus publicly exposed — anyone can spam them. Consider proxying through a backend or rate-limiting client-side.",
+    "loadLibrary() uses classList.toggle('show', lib==='sussy') which relies on CSS .show display rule; verified working."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "test_credentials": "None required",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Static HTML page at /nocturne-cleaned.html. Dismiss the 'Welcome to Bakaboiz' setup modal by clicking 'Save & continue' before interacting. Default library is Lumin which usually falls back to gnmath with a toast (expected). Request Game button is only visible on sussybakabois library tab. Ambient effects toggle in Settings only applies after clicking Save button (#setSave). Discord webhooks are live — each webhook test posts a real message.",
+  "rca of the issue": "N/A - no bugs found in this iteration. Original 'black background blocking dither' bug already fixed by making body background transparent (verified: bodyBg=rgba(0,0,0,0), htmlBg=rgb(5,6,13), canvas at z=-3 with brightness 204/255 sampled at empty body area)."
+}
